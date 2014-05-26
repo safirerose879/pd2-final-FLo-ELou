@@ -1,19 +1,19 @@
 
 public abstract class Teachers extends Cards{
 
-	public int StudentRating;
+	public int StudentRating, teachingSkill;
 	
 	public Teachers(String name,
 			String descripton,
 			int wisdom,
 			int likability,
-			int teachingSkill,
 			int Enthusiasm,
 			int Charisma,
 			int Bravery,
 			int StudentRating) {
-		super(name, descripton, wisdom, likability, teachingSkill, Enthusiasm, Charisma, Bravery);
+		super(name, descripton, wisdom, likability, Enthusiasm, Charisma, Bravery);
 		this.StudentRating = StudentRating;
+		this.teachingSkill = teachingSkill;
 	}
 	
 	public String toString()
@@ -44,6 +44,9 @@ public abstract class Teachers extends Cards{
 	}
 	public int getBravery(){
 		return Bravery;
+	}
+	public int getStudentRating(){
+		return StudentRating; 
 	}
 
 	

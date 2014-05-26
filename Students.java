@@ -7,18 +7,17 @@ public abstract class Students extends Cards{
 			String descripton,
 			int wisdom,
 			int likability,
-			int teachingSkill,
 			int Enthusiasm,
 			int Charisma,
 			int Bravery,
 			int Grades) {
-		super(name, descripton, wisdom, likability, teachingSkill, Enthusiasm, Charisma, Bravery);
+		super(name, descripton, wisdom, likability, Enthusiasm, Charisma, Bravery);
 		this.Grades = Grades;
 	}
 
 	public String toString()
     {
-	return String.format("%s(%d/%d)", name, description, wisdom, likability, teachingSkill, Enthusiasm, Charisma, Bravery);
+	return String.format("%s(%d/%d)", name, description, wisdom, likability, Enthusiasm, Charisma, Bravery);
     }
 
 	public String getName(){
@@ -33,9 +32,6 @@ public abstract class Students extends Cards{
 	public int getLikability(){
 		return likability;
 	}
-	public int getTeachingSkill(){
-		return teachingSkill;
-	}
 	public int getEnthusiasm(){
 		return Enthusiasm;
 	}
@@ -44,6 +40,9 @@ public abstract class Students extends Cards{
 	}
 	public int getBravery(){
 		return Bravery;
+	}
+	public int getGrades(){
+		return Grades;
 	}
 	
 }
