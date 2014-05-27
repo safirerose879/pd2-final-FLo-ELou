@@ -20,7 +20,7 @@ public abstract class Teachers extends Cards{
 	
 	public String toString()
     {
-	return String.format("%s(%d/%d)", name, description, wisdom, likability, teachingSkill, Enthusiasm, Charisma, Bravery);
+	return String.format("%s(%d/%d)", name, description, wisdom, likability, Enthusiasm, Charisma, Bravery, teachingSkill, StudentRating);
     }
 	
 	public String getName(){

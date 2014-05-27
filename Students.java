@@ -19,7 +19,7 @@ public abstract class Students extends Cards{
 
 	public String toString()
     {
-	return String.format("%s(%d/%d)", name, description, wisdom, likability, Enthusiasm, Charisma, Bravery);
+	return String.format("%s(%d/%d)", name, description, wisdom, likability, Enthusiasm, Charisma, Bravery, Grades);
     }
 
 	public String getName(){
