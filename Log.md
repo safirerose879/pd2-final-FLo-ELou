@@ -9,3 +9,7 @@ DATE		NAME		WHAT YOU DID
 6-3-14 		Flo		Added WookyungLee, AngelaLin, JerryDai, KevinKan, LawrenceLim.java
 
 6-3-14		Elou		Started GUI
+
+6-4-14		Flo		Added Bob, Dave, Cocoros.java and updated teachers (it had a problem)
+
+6-4-14		Elou		Worked on Gui
