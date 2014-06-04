@@ -11,13 +11,10 @@ public class Gui extends JFrame implements ActionListener {
     
     private Container buttons;
     private JFrame pane;
-    private JButton button, exitButton, wisdom, likability, enthusiasm, charisma, bravery;
+    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery;
     private JLabel heading, obstacle; 
     private JPanel panel;
     private JTextArea ta;
-    private ButtonGroup radioButtons;
-	private GridBagConstraints c = new GridBagConstraints();	
-  
 
 
     private class myKeyListener implements KeyListener {
@@ -28,7 +25,7 @@ public class Gui extends JFrame implements ActionListener {
 	public void keyTyped(KeyEvent e) {  
 	}
     }
-     private class TextAreaOutputStream extends OutputStream {
+    private class TextAreaOutputStream extends OutputStream {
 	 private final JTextArea textArea;
 	 private final StringBuilder sb = new StringBuilder();
 
@@ -54,12 +51,15 @@ public class Gui extends JFrame implements ActionListener {
 	    }
 	}
 
-     }
+	}
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exitButton) {
             System.exit(0);
         } 
+	if (e.getSource() == wisdom){
+	    ta = new JTextArea ("wisdom");
+	}
     }
 
     
@@ -85,7 +85,7 @@ public class Gui extends JFrame implements ActionListener {
 
 	ta = new JTextArea(450, 20);
 	ta.setEditable(false);
-	System.setOut(new PrintStream(new TextAreaOutputStream(ta)));
+	//System.setOut(new PrintStream(new TextAreaOutputStream(ta)));
 
 	//radioButtons = new ButtonGroup();	
 
@@ -113,6 +113,7 @@ public class Gui extends JFrame implements ActionListener {
 
 	panel = new JPanel();
 	panel.add(buttons);
+	panel.add(ta);
 
 	pane.add(panel);
 
@@ -123,7 +124,7 @@ public class Gui extends JFrame implements ActionListener {
 	pane.setVisible(true);	
 
 	exitButton.addActionListener(this); 
-    wisdom.addActionListener(this);
+	wisdom.addActionListener(this);
 	likability.addActionListener(this);
 	enthusiasm.addActionListener(this);
 	charisma.addActionListener(this);
