@@ -23,7 +23,21 @@ public class GuiRedo extends JFrame implements ActionListener {
 	public void keyTyped(KeyEvent e) {  
 	}
     } 
+    
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == exitButton) {
+            System.exit(0);
+        } 
+	if (e.getSource() == wisdom){
+	    ta = new JTextArea ("wisdom");
+	}
+    }
 
+    public GuiRedo(){
+	pane = new JFrame();
+	pane.getContentPane().setLayout(new FlowLayout());
+	pane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 
 
 }
