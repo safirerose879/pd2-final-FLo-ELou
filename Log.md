@@ -6,6 +6,6 @@ DATE		NAME		WHAT YOU DID
 
 6-1-14		Elou		CARDS --> Florence.png
 
-6-3-14 		Flo		Added more students
+6-3-14 		Flo		Added WookyungLee, AngelaLin, JerryDai, KevinKan, LawrenceLim.java
 
 6-3-14		Elou		Started GUI
