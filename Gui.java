@@ -11,11 +11,12 @@ public class Gui extends JFrame implements ActionListener {
     
     private Container buttons;
     private JFrame pane;
-    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery;
+    private JButton button, exitButton, wisdom, likability, enthusiasm, charisma, bravery;
     private JLabel heading, obstacle; 
     private JPanel panel;
     private JTextArea ta;
     private ButtonGroup radioButtons;
+	private GridBagConstraints c = new GridBagConstraints();	
   
 
 
@@ -82,6 +83,12 @@ public class Gui extends JFrame implements ActionListener {
 	pane.getContentPane().setLayout(new FlowLayout());
 	pane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+	ta = new JTextArea(450, 20);
+	ta.setEditable(false);
+	System.setOut(new PrintStream(new TextAreaOutputStream(ta)));
+
+	//radioButtons = new ButtonGroup();	
+
 	exitButton = new JButton("QUIT");
 	wisdom = new JButton("WISDOM");
 	likability = new JButton("LIKABILITY");
@@ -89,15 +96,6 @@ public class Gui extends JFrame implements ActionListener {
 	charisma = new JButton("CHARISMA");
 	bravery = new JButton("BRAVERY");
 	heading = new JLabel ("CARD GAME!");
-
-	ta = new JTextArea(450, 20);
-	ta.setEditable(false);
-	System.setOut(new PrintStream(new TextAreaOutputStream(ta)));
-
-
-	radioButtons = new ButtonGroup();
-
-	//makes track in very beginning because 25meters is selected as true first
 
 	buttons = new Container();
 	buttons.setLayout(new FlowLayout());
@@ -109,7 +107,7 @@ public class Gui extends JFrame implements ActionListener {
         buttons.add(charisma);
         buttons.add(bravery);
         buttons.add(heading);
-	//buttons.add(obstacle); //for testing purposes
+		
 
 	heading.setFont(new Font("Broadway", Font.BOLD, 20));
 
@@ -125,13 +123,13 @@ public class Gui extends JFrame implements ActionListener {
 	pane.setVisible(true);	
 
 	exitButton.addActionListener(this); 
-        wisdom.addActionListener(this);
+    wisdom.addActionListener(this);
 	likability.addActionListener(this);
 	enthusiasm.addActionListener(this);
 	charisma.addActionListener(this);
 	bravery.addActionListener(this);
 
-	pane.setTitle("Kirby Minigame");
+	pane.setTitle("Card Game");
 	//panel.setBorder(BorderFactory.createLineBorder(Color.blue, 3));
 	pane.setSize(750,400);
 	pane.setLocation(250,150);	
