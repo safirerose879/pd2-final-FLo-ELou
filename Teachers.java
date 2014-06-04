@@ -12,7 +12,8 @@ public abstract class Teachers extends Cards{
 			int Enthusiasm,
 			int Charisma,
 			int Bravery,
-			int StudentRating) {
+			int StudentRating
+			int teachingSkill) {
 		super(name, descripton, wisdom, likability, Enthusiasm, Charisma, Bravery);
 		this.StudentRating = StudentRating;
 		this.teachingSkill = teachingSkill;
