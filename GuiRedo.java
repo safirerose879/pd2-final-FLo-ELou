@@ -59,7 +59,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	charisma = new JButton("CHARISMA");
 	bravery = new JButton("BRAVERY");
 	heading = new JLabel ("CARD GAME!");
-
+	/*
 	buttons = new Container();
 	buttons.setLayout(new FlowLayout());
   
@@ -70,18 +70,25 @@ public class GuiRedo extends JFrame implements ActionListener {
         buttons.add(charisma);
         buttons.add(bravery);
 	//buttons.add(heading);
+	*/
 
 	ImageIcon card = createImageIcon("CARDS/card-florence.png", "florence card");
-	playcard = new JLabel(card);
+	//playcard = new JLabel(card);
 	layout1 = new JPanel();
-	layout1.add(playcard);
+	layout1.add(new JLabel(card));
 
-	panel = new JPanel();//(new GridLayout(6,1));
+	panel = new JPanel(new BorderLayout());//(new GridLayout(6,1));
 	    //panel.setMaximumSize(new Dimension (100,100));
 	    //exitButton.setPreferredSize(new Dimension(10,40));
 	panel.add(exitButton);
 	panel.add(heading);
-	panel.add(buttons);
+	panel.add(wisdom);
+	panel.add(likability);
+	panel.add(enthusiasm);
+	panel.add(charisma);
+	panel.add(bravery);
+
+	panel.add(layout1, BorderLayout.SOUTH);
 	//panel.add(playcard);
 	//panel.add(playcard, BorderLayout.SOUTH);
 
@@ -92,13 +99,13 @@ public class GuiRedo extends JFrame implements ActionListener {
 	charisma.addActionListener(this);
 	bravery.addActionListener(this);
 
-	/*	pane.add(panel);
+	pane.add(panel);
 
 	pane.pack();
 	pane.setVisible(true);
 	pane.setTitle("Card Game");
 	pane.setSize(750,500);
-	pane.setLocation(250,100);*/
+	pane.setLocation(250,100);
 
 
 	/*JPanel gui = new JPanel(new BorderLayout());
