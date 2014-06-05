@@ -12,9 +12,9 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JFrame pane;
     private Container buttons;
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery;
-    private JLabel heading;
+    private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel;
+    private JPanel panel,layout1;
 
     private class myKeyListener implements KeyListener {
 	public void keyPressed(KeyEvent e) {
@@ -30,11 +30,24 @@ public class GuiRedo extends JFrame implements ActionListener {
             System.exit(0);
         } 
 	if (e.getSource() == wisdom){
-	    ta = new JTextArea ("wisdom");
+	    test = new JLabel("Wiztothedom");
+	    panel.add(test);
+	}
+    }
+
+    protected ImageIcon createImageIcon(String path,
+					String description) {
+	java.net.URL imgURL = getClass().getResource(path);
+	if (imgURL != null) {
+	    return new ImageIcon(imgURL, description);
+	} else {
+	    System.err.println("Couldn't find file: " + path);
+	    return null;
 	}
     }
 
     public GuiRedo(){
+
 	pane = new JFrame();
 	pane.getContentPane().setLayout(new FlowLayout());
 	pane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -58,10 +71,19 @@ public class GuiRedo extends JFrame implements ActionListener {
         buttons.add(bravery);
 	//buttons.add(heading);
 
-	panel = new JPanel();
+	ImageIcon card = createImageIcon("CARDS/card-florence.png", "florence card");
+	playcard = new JLabel(card);
+	layout1 = new JPanel();
+	layout1.add(playcard);
+
+	panel = new JPanel();//(new GridLayout(6,1));
+	    //panel.setMaximumSize(new Dimension (100,100));
+	    //exitButton.setPreferredSize(new Dimension(10,40));
 	panel.add(exitButton);
 	panel.add(heading);
 	panel.add(buttons);
+	//panel.add(playcard);
+	//panel.add(playcard, BorderLayout.SOUTH);
 
 	exitButton.addActionListener(this); 
 	wisdom.addActionListener(this);
@@ -70,13 +92,24 @@ public class GuiRedo extends JFrame implements ActionListener {
 	charisma.addActionListener(this);
 	bravery.addActionListener(this);
 
-	pane.add(panel);
+	/*	pane.add(panel);
 
 	pane.pack();
 	pane.setVisible(true);
 	pane.setTitle("Card Game");
 	pane.setSize(750,500);
-	pane.setLocation(250,100);
+	pane.setLocation(250,100);*/
+
+
+	/*JPanel gui = new JPanel(new BorderLayout());
+                JPanel labels = new JPanel();
+                labels.add(new JLabel("Label 1"));
+                labels.add(new JLabel("Label 2"));
+
+                gui.add(labels, BorderLayout.NORTH);
+                gui.add(new JButton("Button"), BorderLayout.SOUTH);
+
+                JOptionPane.showMessageDialog(null, gui);*/
     }
     public static void main(String[] args) {
         GuiRedo g = new GuiRedo();
