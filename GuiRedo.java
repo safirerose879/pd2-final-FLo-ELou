@@ -14,7 +14,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery;
     private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel,layout1;
+    private JPanel panel,layout1,panel2;
 
     private class myKeyListener implements KeyListener {
 	public void keyPressed(KeyEvent e) {
@@ -80,13 +80,16 @@ public class GuiRedo extends JFrame implements ActionListener {
 	panel = new JPanel(new BorderLayout());//(new GridLayout(6,1));
 	    //panel.setMaximumSize(new Dimension (100,100));
 	    //exitButton.setPreferredSize(new Dimension(10,40));
-	panel.add(exitButton);
-	panel.add(heading);
-	panel.add(wisdom);
-	panel.add(likability);
-	panel.add(enthusiasm);
-	panel.add(charisma);
-	panel.add(bravery);
+	panel2 = new JPanel();
+	panel2.add(exitButton);
+	panel2.add(heading);
+	panel2.add(wisdom);
+	panel2.add(likability);
+	panel2.add(enthusiasm);
+	panel2.add(charisma);
+	panel2.add(bravery);
+
+	panel.add(panel2, BorderLayout.NORTH);
 
 	panel.add(layout1, BorderLayout.SOUTH);
 	//panel.add(playcard);
@@ -96,6 +99,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	wisdom.addActionListener(this);
 	likability.addActionListener(this);
 	enthusiasm.addActionListener(this);
+
 	charisma.addActionListener(this);
 	bravery.addActionListener(this);
 
