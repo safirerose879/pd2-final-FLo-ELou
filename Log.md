@@ -13,3 +13,6 @@ DATE		NAME		WHAT YOU DID
 6-4-14		Flo		Added Bob, Dave, Cocoros.java and updated teachers (it had a problem)
 
 6-4-14		Elou		Worked on Gui
+
+6-5-14		Flo		Added MicheleChan.java
+
