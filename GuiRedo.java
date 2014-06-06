@@ -14,7 +14,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery;
     private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel,layout1,panel2;
+    private JPanel panel,layout1,panel2, message;
 
     private class myKeyListener implements KeyListener {
 	public void keyPressed(KeyEvent e) {
@@ -30,8 +30,38 @@ public class GuiRedo extends JFrame implements ActionListener {
             System.exit(0);
         } 
 	if (e.getSource() == wisdom){
-	    test = new JLabel("Wiztothedom");
-	    panel.add(test);
+	    message = new JPanel();
+	    FlorenceLo f = new FlorenceLo();
+	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getWisdom()) + " WISDOM points"));
+	    JOptionPane.showMessageDialog(null, message);
+	}
+ 
+	if (e.getSource() == likability){
+	    message = new JPanel();
+	    FlorenceLo f = new FlorenceLo();
+	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getLikability()) + " LIKABILITY points"));
+	    JOptionPane.showMessageDialog(null, message);
+	}
+
+	if (e.getSource() == enthusiasm){
+	    message = new JPanel();
+	    FlorenceLo f = new FlorenceLo();
+	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getEnthusiasm()) + " ENTHUSIASM points"));
+	    JOptionPane.showMessageDialog(null, message);
+	}
+
+	if (e.getSource() == charisma){
+	    message = new JPanel();
+	    FlorenceLo f = new FlorenceLo();
+	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getCharisma()) + " CHARISMA points"));
+	    JOptionPane.showMessageDialog(null, message);
+	}
+
+	if (e.getSource() == bravery){
+	    message = new JPanel();
+	    FlorenceLo f = new FlorenceLo();
+	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getBravery()) + " BRAVERY points"));
+	    JOptionPane.showMessageDialog(null, message);
 	}
     }
 
@@ -108,7 +138,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	pane.pack();
 	pane.setVisible(true);
 	pane.setTitle("Card Game");
-	pane.setSize(750,500);
+	pane.setSize(750,800);
 	pane.setLocation(250,100);
 
 
