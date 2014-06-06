@@ -16,3 +16,7 @@ DATE		NAME		WHAT YOU DID
 
 6-5-14		Flo		Added MicheleChan.java
 
+6-5-14		Elou		GUI
+
+6-6-14		Elou		GUI
+
