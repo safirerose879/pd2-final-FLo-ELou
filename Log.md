@@ -24,3 +24,4 @@ DATE		NAME		WHAT YOU DID
 
 6-7-14		Elou		GUI
 
+6-7/6-8-14	Flo		Trying to fix Deck
