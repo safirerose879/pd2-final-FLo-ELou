@@ -25,3 +25,7 @@ DATE		NAME		WHAT YOU DID
 6-7-14		Elou		GUI
 
 6-7/6-8-14	Flo		Trying to fix Deck
+
+6-9-14 		Flo		Still fixing Deck
+
+6-9-14		Elou		Attempted to help Florence fix Deck with no success and worked on GUI

@@ -20,7 +20,7 @@ public class Deck1 extends ArrayList<Cards> {
 		Starter = new ArrayList<Cards>();
 		int k = 0;
 		while(BoringDeck[k] != null){
-			int num = (int) (Math.random() * BoringDeck.length - 1);
+			int num = (int) (Math.random() * BoringDeck.length);
 			Starter.add(BoringDeck[num]);
 			BoringDeck[num] = null;
 		}
@@ -28,7 +28,7 @@ public class Deck1 extends ArrayList<Cards> {
 	
 	public String ShowDeck(){
 		String str = "";
-		for(int i = 0;i<Starter.size() ;i++){
+		for(int i = 0;i<Starter.size()-1 ;i++){
 			str += Starter.get(i).getName() + "\n";
 		}
 		return str;

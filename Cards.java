@@ -23,6 +23,29 @@ public abstract class Cards implements Serializable {
 		this.Charisma = Charisma;
 		this.Bravery = Bravery;
 	}
+
+	public String getName(){
+		return name;
+	}
+	public String getDescription(){
+		return description;
+	}
+	public int getWisdom(){
+		return wisdom;
+	}
+	public int getLikability(){
+		return likability;
+	}
+	public int getEnthusiasm(){
+		return Enthusiasm;
+	}
+	public int getCharisma(){
+		return Charisma;
+	}
+	public int getBravery(){
+		return Bravery;
+	}
+
 	
 	
 	
