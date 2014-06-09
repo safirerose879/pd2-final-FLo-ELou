@@ -102,7 +102,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//buttons.add(heading);
 	*/
 
-	ImageIcon card = createImageIcon("CARDS/card-florence.png", "florence card");
+	ImageIcon card = createImageIcon("CARDS/FlorenceLo.png", "florence card");
 	//playcard = new JLabel(card);
 	layout1 = new JPanel();
 	layout1.add(new JLabel(card));
