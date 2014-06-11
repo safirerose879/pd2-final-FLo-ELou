@@ -31,3 +31,5 @@ DATE		NAME		WHAT YOU DID
 6-9-14		Elou		Attempted to help Florence fix Deck with no success and worked on GUI
 
 6-10-14		Flo/Elou	IT"S A HISTORIC DAY!!! DECK WORKSSS!!!! Of course with help from awesome partner Emma. 
+
+6-10-14		Flo		Added addSpecialCards to Deck2.java

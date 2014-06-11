@@ -66,12 +66,48 @@ public class Deck2 extends ArrayList<Cards> {
 	}
 	return str;
     }
+    
+    public void addSpCard(){
+
+    	AngelaLin AL = new AngelaLin();
+    	BrownMykolyk BM = new BrownMykolyk();
+    	Cocoros CO = new Cocoros();
+    	EmmaLou EL = new EmmaLou();
+    	FlorenceLo FL = new FlorenceLo();
+    	JerryDai JD = new JerryDai();
+    	KevinKan KK = new KevinKan();
+    	LawrenceLim LL = new LawrenceLim();
+    	MicheleChan MC = new MicheleChan();
+    	WookyungLee WL = new WookyungLee();
+    	Zamansky ZA = new Zamansky();
+    	
+    	ArrayList<Cards> Special = new ArrayList<Cards>();
+    	Special.add(AL);
+    	Special.add(BM);
+    	Special.add(CO);
+    	Special.add(EL);
+    	Special.add(FL);
+    	Special.add(JD);
+    	Special.add(KK);
+    	Special.add(LL);
+    	Special.add(MC);
+    	Special.add(WL);
+    	Special.add(ZA);
+    	
+    	Random r = new Random();
+	    int num = r.nextInt(Special.size());	    
+	    Starter.add(Special.get(num));
+	    
+	    shuffle();
+    }
 	
     public static void main(String args[]){
 	Deck2 a = new Deck2();
 	System.out.println(a.ShowDeck());
 	System.out.println("\n");
 	a.shuffle();
+	System.out.println(a.ShowDeck());
+	a.addSpCard();
 	System.out.println(a.ShowDeck());
 		
     }
