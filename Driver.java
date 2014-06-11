@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Driver{
 
+    int numGames = 1;
+
+
     public static void main(String args[]){
 
 	System.out.println("\n");
@@ -20,7 +23,25 @@ public class Driver{
 	    System.out.println("Oh you want to leave. Please come back and play soon.");
 	}
 
+	Player name = new Player();
+	Player FloEm = new Player();
+	System.out.println("Level: " + name.getLevel());
+	System.out.println("Experience: " + name.getExp());
 
+	System.out.println("Welcome to your " + numGames +" game.");
+
+	System.out.println("Your first opponent is FloEm.");
+
+	while(FloEm != null){
+
+	    System.out.println("Which aspect do you wnat to use? \n Type: W for Wisdom, L for Likability, E for Enthusiasm, C for Charisma, and B for Bravery.");
+	    Scanner c = new Scanner(System.in);
+	    String move = c.next();
+	    if(move.equals("")){
+
+	    }
+
+	}
 
     }
 
