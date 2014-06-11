@@ -33,3 +33,7 @@ DATE		NAME		WHAT YOU DID
 6-10-14		Flo/Elou	IT"S A HISTORIC DAY!!! DECK WORKSSS!!!! Of course with help from awesome partner Emma. 
 
 6-10-14		Flo		Added addSpecialCards to Deck2.java
+
+6-11-14 	Flo		Worked on Driver
+
+6-11-14		Elou		Gui + Deck3.java

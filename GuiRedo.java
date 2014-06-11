@@ -11,7 +11,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 
     private JFrame pane;
     private Container buttons;
-    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery;
+    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame;
     private JLabel heading,test,playcard;
     private JTextArea ta;
     private JPanel panel,layout1,panel2, message;
@@ -23,7 +23,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	}
 	public void keyTyped(KeyEvent e) {  
 	}
-    } 
+    } //SHUFFLE BUTTON = MAX 3 SHUFFLES
     
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exitButton) {
@@ -88,6 +88,8 @@ public class GuiRedo extends JFrame implements ActionListener {
 	enthusiasm = new JButton("ENTHUSIASM");
 	charisma = new JButton("CHARISMA");
 	bravery = new JButton("BRAVERY");
+	shuffle = new JButton ("SHUFFLE");
+	//nextGame = new JButton ("Proceed to the next round");
 	heading = new JLabel ("CARD GAME!");
 	/*
 	buttons = new Container();
@@ -118,6 +120,8 @@ public class GuiRedo extends JFrame implements ActionListener {
 	panel2.add(enthusiasm);
 	panel2.add(charisma);
 	panel2.add(bravery);
+	panel2.add(shuffle);
+	//panel2.add(nextGame);
 
 	panel.add(panel2, BorderLayout.NORTH);
 
@@ -138,7 +142,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	pane.pack();
 	pane.setVisible(true);
 	pane.setTitle("Card Game");
-	pane.setSize(750,800);
+	pane.setSize(850,800);
 	pane.setLocation(250,100);
 
 

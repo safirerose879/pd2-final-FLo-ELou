@@ -11,7 +11,7 @@ public class Gui extends JFrame implements ActionListener {
     
     private Container buttons;
     private JFrame pane;
-    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery;
+    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame;
     private JLabel heading, obstacle; 
     private JPanel panel;
     private JTextArea ta;
@@ -95,6 +95,8 @@ public class Gui extends JFrame implements ActionListener {
 	enthusiasm = new JButton("ENTHUSIASM");
 	charisma = new JButton("CHARISMA");
 	bravery = new JButton("BRAVERY");
+	shuffle = new JButton("SHUFFLE");
+	nextGame = new JButton("Next Game");
 	heading = new JLabel ("CARD GAME!");
 
 	buttons = new Container();
@@ -107,6 +109,8 @@ public class Gui extends JFrame implements ActionListener {
         buttons.add(charisma);
         buttons.add(bravery);
         buttons.add(heading);
+	buttons.add(shuffle);
+	buttons.add(nextGame);
 		
 
 	heading.setFont(new Font("Broadway", Font.BOLD, 20));
@@ -129,6 +133,8 @@ public class Gui extends JFrame implements ActionListener {
 	enthusiasm.addActionListener(this);
 	charisma.addActionListener(this);
 	bravery.addActionListener(this);
+	shuffle.addActionListener(this);
+	nextGame.addActionListener(this);
 
 	pane.setTitle("Card Game");
 	//panel.setBorder(BorderFactory.createLineBorder(Color.blue, 3));
