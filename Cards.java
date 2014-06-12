@@ -8,7 +8,7 @@ public abstract class Cards implements Serializable {
 	public String name,description;
 	
 	public Cards(String name,
-			String descripton,
+			String description,
 			int wisdom,
 			int likability,
 			int Enthusiasm,

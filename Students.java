@@ -6,14 +6,14 @@ public abstract class Students extends Cards{
 	public int Grades;
 	
 	public Students(String name,
-			String descripton,
+			String description,
 			int wisdom,
 			int likability,
 			int Enthusiasm,
 			int Charisma,
 			int Bravery,
 			int Grades) {
-		super(name, descripton, wisdom, likability, Enthusiasm, Charisma, Bravery);
+		super(name, description, wisdom, likability, Enthusiasm, Charisma, Bravery);
 		this.Grades = Grades;
 	}
 
