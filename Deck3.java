@@ -113,6 +113,13 @@ public class Deck3 extends ArrayList<Cards> {
 	    
 	    shuffle();
     }
+
+    public void makeLinkedList(){
+	MyLinkedList<Card> C = new MyLinkedList<String>();
+	for(int i = 0; i < Starter.size(); i++){
+	    C.add(Starter.get(i));
+	}
+    }
 	
     public static void main(String args[]){
 	Deck3 a = new Deck3();
