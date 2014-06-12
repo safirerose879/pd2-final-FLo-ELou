@@ -2,13 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Driver{
-    public void AfterGame(){
-	if(A.one.Starter.size() != 0){
-		System.out.println("Good job you won!");
-		A.exp += 10;
-		A.levelup();
-	}
-    }
+
 	
 
     public static void main(String args[]){
@@ -266,7 +260,11 @@ public class Driver{
 
 	}
 
-	AfterGame();	
+	if(A.one.Starter.size() != 0){
+		System.out.println("Good job you won!");
+		A.exp += 10;
+		A.levelup();
+	}
 	
     }
 
