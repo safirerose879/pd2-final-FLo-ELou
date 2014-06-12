@@ -27,6 +27,13 @@ public class Driver{
 	}
 
 	Player A = new Player();
+	Deck2 SavedDeck = new Deck2();
+	for(int i = 0 ;i<A.one.Starter.size() ;i++){
+	    SavedDeck.add(A.one.Starter.get(i));
+	}
+
+	System.out.println(SavedDeck.ShowDeck());
+
 	Player FloEm = new Player();
 	
 	System.out.println("Level: " + A.getLevel());
@@ -59,7 +66,7 @@ public class Driver{
 			break;
 		}
 		
-		ArrayList<Cards> Tied = new ArrayList<Cards>();
+		Deck2 Tied = new Deck2();
 
 	    System.out.println("Which aspect do you what to use? \n Type: w for Wisdom, l for Likability, e for Enthusiasm, c for Charisma, and b for Bravery.");
 	    Scanner c = new Scanner(System.in);
@@ -264,7 +271,15 @@ public class Driver{
 		System.out.println("Good job you won!");
 		A.exp += 10;
 		A.levelup();
+		numGames++;
+
 	}
+
+	Player Wooky = new Player();
+	WookyungLee W = new WookyungLee();
+	Wooky.one.Starter.add(W);
+
+	
 	
     }
 
