@@ -40,4 +40,8 @@ DATE		NAME		WHAT YOU DID
 
 6-11-14		Flo		Worked on Driver -> added one round of games.Tied doesn't really work yet.
 
+6-12-14		Flo		Worked on Driver.
+
+6-12-14		Elou		Trying to change Deck2 to LinkedList instead of ArrayList.
+
 
