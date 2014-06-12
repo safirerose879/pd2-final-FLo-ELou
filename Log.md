@@ -37,3 +37,7 @@ DATE		NAME		WHAT YOU DID
 6-11-14 	Flo		Worked on Driver
 
 6-11-14		Elou		Gui + Deck3.java
+
+6-11-14		Flo		Worked on Driver -> added one round of games.Tied doesn't really work yet.
+
+
