@@ -61,7 +61,7 @@ public class Driver{
 		
 	    ArrayList<Cards> Tied = new ArrayList<Cards>();
 		
-	    System.out.println("Your first card is: ");
+	    System.out.println("You drew: ");
 	    System.out.println(A.one.Draw());
 	    System.out.println("Which aspect do you what to use? \n Type: w for Wisdom, l for Likability, e for Enthusiasm, c for Charisma, and b for Bravery.");
 	    Scanner c = new Scanner(System.in);
@@ -71,36 +71,36 @@ public class Driver{
 		    if(Tied.size()!=0){
 			System.out.println("You got the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    A.one.Starter.add(Tied.get(i));	
+			    A.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You win this round! FloEm loses this card.");
-		    A.one.Starter.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
+		    A.one.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getWisdom() < FloEm.one.Starter.get(0).getWisdom()){
 		    if(Tied.size()!=0){
 			System.out.println("You lost the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    FloEm.one.Starter.add(Tied.get(i));	
+			    FloEm.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You lost this round! You lost a card.");
-		    FloEm.one.Starter.add(A.one.Starter.get(0));
-		    A.one.Starter.remove(0);
+		    FloEm.one.add(A.one.Starter.get(0));
+		    A.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getWisdom() == FloEm.one.Starter.get(0).getWisdom()){
 		    System.out.println("Tied! You both lose your respective card.");
-		    Tied.add(A.one.Starter.get(0));
-		    Tied.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
-		    A.one.Starter.remove(0);
+		    Tied.add(A.one.get(0));
+		    Tied.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
+		    A.one.remove(0);
 	    	}
 	    	System.out.println("You have "+ A.one.Starter.size() + " cards left. And FloEm has " + FloEm.one.Starter.size() +" cards left.");
 	    }
@@ -109,36 +109,36 @@ public class Driver{
 		    if(Tied.size()!=0){
 			System.out.println("You got the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    A.one.Starter.add(Tied.get(i));	
+			    A.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You win this round! FloEm loses this card.");
-		    A.one.Starter.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
+		    A.one.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getLikability() < FloEm.one.Starter.get(0).getLikability()){
 		    if(Tied.size()!=0){
 			System.out.println("You lost the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    FloEm.one.Starter.add(Tied.get(i));	
+			    FloEm.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You lost this round! You lost a card.");
-		    FloEm.one.Starter.add(A.one.Starter.get(0));
-		    A.one.Starter.remove(0);
+		    FloEm.one.add(A.one.get(0));
+		    A.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getLikability() == FloEm.one.Starter.get(0).getLikability()){
 		    System.out.println("Tied! You both lose your respective card.");
-		    Tied.add(A.one.Starter.get(0));
-		    Tied.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
-		    A.one.Starter.remove(0);
+		    Tied.add(A.one.get(0));
+		    Tied.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
+		    A.one.remove(0);
 	    	}
 	    	System.out.println("You have "+ A.one.Starter.size() + " cards left. And FloEm has " + FloEm.one.Starter.size() +" cards left.");
 	    }
@@ -147,36 +147,36 @@ public class Driver{
 		    if(Tied.size()!=0){
 			System.out.println("You got the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    A.one.Starter.add(Tied.get(i));	
+			    A.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You win this round! FloEm loses this card.");
-		    A.one.Starter.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
+		    A.one.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getEnthusiasm() < FloEm.one.Starter.get(0).getEnthusiasm()){
 		    if(Tied.size()!=0){
 			System.out.println("You lost the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    FloEm.one.Starter.add(Tied.get(i));	
+			    FloEm.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You lost this round! You lost a card.");
-		    FloEm.one.Starter.add(A.one.Starter.get(0));
-		    A.one.Starter.remove(0);
+		    FloEm.one.add(A.one.get(0));
+		    A.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getEnthusiasm() == FloEm.one.Starter.get(0).getEnthusiasm()){
 		    System.out.println("Tied! You both lose your respective card.");
-		    Tied.add(A.one.Starter.get(0));
-		    Tied.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
-		    A.one.Starter.remove(0);
+		    Tied.add(A.one.get(0));
+		    Tied.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
+		    A.one.remove(0);
 	    	}
 	    	System.out.println("You have "+ A.one.Starter.size() + " cards left. And FloEm has " + FloEm.one.Starter.size() +" cards left.");
 	    }
@@ -185,36 +185,36 @@ public class Driver{
 		    if(Tied.size()!=0){
 			System.out.println("You got the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    A.one.Starter.add(Tied.get(i));	
+			    A.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You win this round! FloEm loses this card.");
-		    A.one.Starter.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
+		    A.one.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getCharisma() < FloEm.one.Starter.get(0).getCharisma()){
 		    if(Tied.size()!=0){
 			System.out.println("You lost the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    FloEm.one.Starter.add(Tied.get(i));	
+			    FloEm.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You lost this round! You lost a card.");
-		    FloEm.one.Starter.add(A.one.Starter.get(0));
-		    A.one.Starter.remove(0);
+		    FloEm.one.add(A.one.get(0));
+		    A.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getCharisma() == FloEm.one.Starter.get(0).getCharisma()){
 		    System.out.println("Tied! You both lose your respective card.");
-		    Tied.add(A.one.Starter.get(0));
-		    Tied.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
-		    A.one.Starter.remove(0);
+		    Tied.add(A.one.get(0));
+		    Tied.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
+		    A.one.remove(0);
 	    	}
 	    	System.out.println("You have "+ A.one.Starter.size() + " cards left. And FloEm has " + FloEm.one.Starter.size() +" cards left.");
 	    }
@@ -223,36 +223,36 @@ public class Driver{
 		    if(Tied.size()!=0){
 			System.out.println("You got the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    A.one.Starter.add(Tied.get(i));	
+			    A.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You win this round! FloEm loses this card.");
-		    A.one.Starter.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
+		    A.one.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getBravery() < FloEm.one.Starter.get(0).getBravery()){
 		    if(Tied.size()!=0){
 			System.out.println("You lost the tied cards as well!");
 			for(int i = 0;i<Tied.size() ;i++){
-			    FloEm.one.Starter.add(Tied.get(i));	
+			    FloEm.one.add(Tied.get(i));	
 			}
 			for(int i = 0;i<Tied.size() ;i++){
 			    Tied.remove(i);
 			}
 		    }
 		    System.out.println("You lost this round! You lost a card.");
-		    FloEm.one.Starter.add(A.one.Starter.get(0));
-		    A.one.Starter.remove(0);
+		    FloEm.one.add(A.one.get(0));
+		    A.one.remove(0);
 	    	}
 	    	else if(A.one.Starter.get(0).getBravery() == FloEm.one.Starter.get(0).getBravery()){
 		    System.out.println("Tied! You both lose your respective card.");
-		    Tied.add(A.one.Starter.get(0));
-		    Tied.add(FloEm.one.Starter.get(0));
-		    FloEm.one.Starter.remove(0);
-		    A.one.Starter.remove(0);
+		    Tied.add(A.one.get(0));
+		    Tied.add(FloEm.one.get(0));
+		    FloEm.one.remove(0);
+		    A.one.remove(0);
 	    	}
 	    	System.out.println("You have "+ A.one.Starter.size() + " cards left. And FloEm has " + FloEm.one.Starter.size() +" cards left.");
 	    }
