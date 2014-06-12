@@ -3,7 +3,8 @@ import java.io.*;
 
 public class Deck3 extends ArrayList<Cards> {
 
-    private ArrayList<Cards> Starter;
+    public ArrayList<Cards> Starter;
+    public Cards a;
 	
     public Deck3(){
 		
@@ -35,6 +36,8 @@ public class Deck3 extends ArrayList<Cards> {
 	    Starter.add(BoringDeck.get(num));
 	    BoringDeck.remove(num);
 	}
+	
+	a = Starter.get(0);
 
     }
 	
@@ -58,6 +61,16 @@ public class Deck3 extends ArrayList<Cards> {
 	}
     }
 
+    public String Draw(){
+    	Cards a = Starter.get(0);
+    	return "Name: " + a.getName() + "\n"
+    			+ "Description: "+ a.getDescription() + "\n"
+    			+ "Wisdom: "+ a.getWisdom() + "\n"
+    			+ "Enthusiasm: "+ a.getEnthusiasm() + "\n"
+    			+ "Charisma: "+ a.getCharisma() + "\n"
+    			+ "Likability: "+ a.getLikability() + "\n"
+    			+ "Bravery: "+ a.getBravery() + "\n";
+    }
 
     public String ShowDeck(){
 	String str = "";
