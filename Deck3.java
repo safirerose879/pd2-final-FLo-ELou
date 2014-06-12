@@ -4,6 +4,7 @@ import java.io.*;
 public class Deck3 extends ArrayList<Cards> {
 
     public ArrayList<Cards> Starter;
+    public MyLinkedList<Cards> C;
     public Cards a;
 	
     public Deck3(){
@@ -115,11 +116,22 @@ public class Deck3 extends ArrayList<Cards> {
     }
 
     public void makeLinkedList(){
-	MyLinkedList<Card> C = new MyLinkedList<String>();
+	C = new MyLinkedList<Cards>();
 	for(int i = 0; i < Starter.size(); i++){
 	    C.add(Starter.get(i));
 	}
     }
+
+    /*public String showLL(){
+	Iterator<Cards> it = C.iterator();
+	while (it.hasNext()){
+	System.out.println(it.next());
+	String s = new String();
+	while (C.getNext() != null){
+	    s += C.getData().getName();
+	}
+	return s;
+    }*/
 	
     public static void main(String args[]){
 	Deck3 a = new Deck3();
@@ -129,6 +141,7 @@ public class Deck3 extends ArrayList<Cards> {
 	System.out.println(a.ShowDeck());
 	a.addSpCard();
 	System.out.println(a.ShowDeck());
+	System.out.println(Arrays.toString(C.toArray()));
 		
     }
 }
