@@ -5,6 +5,7 @@ public class Deck3 extends ArrayList<Cards> {
 
     public ArrayList<Cards> Starter;
     public MyLinkedList<Cards> C;
+    public MyLinkedList<String> P;
     public Cards a;
 	
     public Deck3(){
@@ -117,10 +118,22 @@ public class Deck3 extends ArrayList<Cards> {
 
     public void makeLinkedList(){
 	C = new MyLinkedList<Cards>();
+	P = new MyLinkedList<String>();
 	for(int i = 0; i < Starter.size(); i++){
 	    C.add(Starter.get(i));
+	    P.add(Starter.get(i).getName());
 	}
     }
+
+    public MyLinkedList printLinkedList(){
+	return P;
+    }
+
+    /* public String printLinkedList(){
+	P = new MyLinkedList<String>();
+	for (int i = 0; i < C.size(); i++)
+
+	}*/
 
     /*public String showLL(){
 	Iterator<Cards> it = C.iterator();
@@ -135,13 +148,15 @@ public class Deck3 extends ArrayList<Cards> {
 	
     public static void main(String args[]){
 	Deck3 a = new Deck3();
-	System.out.println(a.ShowDeck());
+	/*System.out.println(a.ShowDeck());
 	System.out.println("\n");
 	a.shuffle();
 	System.out.println(a.ShowDeck());
 	a.addSpCard();
-	System.out.println(a.ShowDeck());
-	System.out.println(Arrays.toString(C.toArray()));
+	System.out.println(a.ShowDeck());*/
+	a.makeLinkedList();
+	//System.out.println(a.printLinkedList().toArray());
+	System.out.println(Arrays.toString(a.printLinkedList().toArray()));
 		
     }
 }
