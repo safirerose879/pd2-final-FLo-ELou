@@ -44,4 +44,6 @@ DATE		NAME		WHAT YOU DID
 
 6-12-14		Elou		Trying to change Deck2 to LinkedList instead of ArrayList.
 
+6-13-14		Flo		Fixed leveling up.
 
+6-13-14		Elou		Stared at Deck3 and cried.
