@@ -47,3 +47,5 @@ DATE		NAME		WHAT YOU DID
 6-13-14		Flo		Fixed leveling up.
 
 6-13-14		Elou		Stared at Deck3 and cried.
+
+6-13-14		Flo		Got two games but exp doesn't work.
