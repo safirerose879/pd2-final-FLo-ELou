@@ -11,15 +11,18 @@ public class GuiRedo extends JFrame implements ActionListener {
 
     private JFrame pane;
     private Container buttons;
-    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame;
+    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel,layout1,panel2, message;
+    private JPanel panel,layout1,panel2, message, begCards;
 
     private Deck3 d = new Deck3();
+    private Player A = new Player();
+    private Player B = new Player();
 
     private int numShuffles;
 
+    //METHODS
     private class myKeyListener implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 	}
@@ -27,12 +30,21 @@ public class GuiRedo extends JFrame implements ActionListener {
 	}
 	public void keyTyped(KeyEvent e) {  
 	}
-    } //SHUFFLE BUTTON = MAX 3 SHUFFLES
+    } 
     
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exitButton) {
-            System.exit(0);
+            int reply = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit? Your progress will not be saved.");
+	    if (reply == JOptionPane.YES_OPTION){
+		System.exit(0);
+	    }
         } 
+
+	if (e.getSource() == rules){
+	    message = new JPanel();
+	    message.add(new JLabel("Here are the rules:"));
+	    JOptionPane.showMessageDialog(null, message);
+	}
 	if (e.getSource() == wisdom){
 	    message = new JPanel();
 	    FlorenceLo f = new FlorenceLo();
@@ -90,7 +102,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		message.add(new JLabel("Sorry, you don't have any shuffles left."));
 		JOptionPane.showMessageDialog(null, message);
 	    }
-	    }
+	}
     }
 
     protected ImageIcon createImageIcon(String path,
@@ -104,6 +116,20 @@ public class GuiRedo extends JFrame implements ActionListener {
 	}
     }
 
+    public void PlayGameGUI(Player3 B){
+	begCards = new JPanel();
+	Player3 A = new Player3();
+	for (int i = 0; i < A.one.Starter.size(); i++){
+	    d.add(A.one.Starter.get(i));
+	    d.makeLL();
+	}
+	begCards.add(new JLabel("Your cards are:" + "\n" + d.toString()));
+	JOptionPane.showMessageDialog(null, begCards);
+	begCards.add(new JLabel("Your opponent's cards are:")); //+ "\n" + B.one.makeLL().toString()));
+	JOptionPane.showMessageDialog(null, begCards);
+
+    }
+
     public GuiRedo(){
 	numShuffles = 3;
 
@@ -112,6 +138,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	pane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	exitButton = new JButton("QUIT");
+	rules = new JButton("RULES");
 	wisdom = new JButton("WISDOM");
 	likability = new JButton("LIKABILITY");
 	enthusiasm = new JButton("ENTHUSIASM");
@@ -145,6 +172,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	    //exitButton.setPreferredSize(new Dimension(10,40));
 	panel2 = new JPanel();
 	panel2.add(exitButton);
+	panel2.add(rules);
 	panel2.add(heading);
 	panel2.add(wisdom);
 	panel2.add(likability);
@@ -161,6 +189,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//panel.add(playcard, BorderLayout.SOUTH);
 
 	exitButton.addActionListener(this); 
+	rules.addActionListener(this);
 	wisdom.addActionListener(this);
 	likability.addActionListener(this);
 	enthusiasm.addActionListener(this);
@@ -176,6 +205,8 @@ public class GuiRedo extends JFrame implements ActionListener {
 	pane.setSize(850,800);
 	pane.setLocation(250,100);
 
+	Player3 Floem = new Player3();
+	PlayGameGUI(Floem);
 
 	/*JPanel gui = new JPanel(new BorderLayout());
                 JPanel labels = new JPanel();
