@@ -1,20 +1,23 @@
-public class Node<E> {
+public class Node<Cards> {
 
-    private E data;
-    private Node next;
+    private Cards data;
+    private Cards next;
 
-    public Node(E d) {
+    public Node(Cards d) {
 	data = d;
 	next = null;
     }
 
-    public void setData(E d) {
+    public void setData(Cards d) {
 	data = d;
     }
-    public E getData() {
+    public Cards getData() {
 	return data;
     }
-    public void setNext(Node n){
+    public String getName(){
+	return data.getName();
+    }
+    public void setNext(Cards n){
 	next = n;
     }
     public Node getNext() {

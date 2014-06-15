@@ -4,8 +4,7 @@ import java.io.*;
 public class Deck3 extends ArrayList<Cards> {
 
     public ArrayList<Cards> Starter;
-    public MyLinkedList<Cards> C;
-    public MyLinkedList<String> P;
+    public LinkedList<Cards> C;
     public Cards a;
 	
     public Deck3(){
@@ -116,47 +115,56 @@ public class Deck3 extends ArrayList<Cards> {
 	    shuffle();
     }
 
-    public void makeLinkedList(){
+    public void makeLL(){
+	C = new LinkedList<Cards>();
+	for (int i = 0; i < Starter.size(); i++){
+	    C.add(Starter.get(i));
+	}
+    }
+
+    public String toString(){
+	String ret = new String();
+	for (int i = 0; i < C.size(); i++){
+	    ret += C.get(i).getName() + "\n";
+	}
+	return ret;
+    }
+    /* public void makeLinkedList(){
 	C = new MyLinkedList<Cards>();
-	P = new MyLinkedList<String>();
 	for(int i = 0; i < Starter.size(); i++){
 	    C.add(Starter.get(i));
-	    P.add(Starter.get(i).getName());
 	}
     }
-
-    public MyLinkedList printLinkedList(){
-	return P;
-    }
-
-    /* public String printLinkedList(){
-	P = new MyLinkedList<String>();
-	for (int i = 0; i < C.size(); i++)
-
+    public MyLinkedList<Cards> printLL(){
+	return C;
+	}*/
+    /*
+    public String toString(){
+	String ret = new String();
+	ret = "Hello";
+        Node<Cards> current = C.getHead();
+	while (current!=null){
+	    ret += current.getName() + "\n";
+	    current = current.getNext();
+	}
+	return ret;
 	}*/
 
-    /*public String showLL(){
-	Iterator<Cards> it = C.iterator();
-	while (it.hasNext()){
-	System.out.println(it.next());
-	String s = new String();
-	while (C.getNext() != null){
-	    s += C.getData().getName();
-	}
-	return s;
-    }*/
+
 	
     public static void main(String args[]){
 	Deck3 a = new Deck3();
-	/*System.out.println(a.ShowDeck());
-	System.out.println("\n");
-	a.shuffle();
 	System.out.println(a.ShowDeck());
-	a.addSpCard();
-	System.out.println(a.ShowDeck());*/
-	a.makeLinkedList();
+	System.out.println("\n");
+	//a.shuffle();
+	//System.out.println(a.ShowDeck());
+	//a.addSpCard();
+	//System.out.println(a.ShowDeck());
+	//a.makeLinkedList();
+	a.makeLL();
 	//System.out.println(a.printLinkedList().toArray());
-	System.out.println(Arrays.toString(a.printLinkedList().toArray()));
+	System.out.println(a.toString());
+	//System.out.println(a.printLL());
 		
     }
 }
