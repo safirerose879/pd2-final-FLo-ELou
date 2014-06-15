@@ -29,7 +29,7 @@ public class Driver{
     		System.out.println("Welcome to your " + numGames +"nd game.");
     	}
 
-    	else if(numGames == 2){
+    	else if(numGames == 3){
     		System.out.println("Welcome to your " + numGames +"rd game.");
     	}
     	else{
