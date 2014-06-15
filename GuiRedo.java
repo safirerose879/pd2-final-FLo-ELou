@@ -11,7 +11,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 
     private JFrame pane;
     private Container buttons;
-    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame;
+    private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
     private JTextArea ta;
     private JPanel panel,layout1,panel2, message;
@@ -33,6 +33,12 @@ public class GuiRedo extends JFrame implements ActionListener {
         if (e.getSource() == exitButton) {
             System.exit(0);
         } 
+
+	if (e.getSource() == rules){
+	    message = new JPanel();
+	    message.add(new JLabel("Here are the rules:"));
+	    JOptionPane.showMessageDialog(null, message);
+	}
 	if (e.getSource() == wisdom){
 	    message = new JPanel();
 	    FlorenceLo f = new FlorenceLo();
@@ -90,7 +96,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		message.add(new JLabel("Sorry, you don't have any shuffles left."));
 		JOptionPane.showMessageDialog(null, message);
 	    }
-	    }
+	}
     }
 
     protected ImageIcon createImageIcon(String path,
@@ -112,6 +118,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	pane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	exitButton = new JButton("QUIT");
+	rules = new JButton("RULES");
 	wisdom = new JButton("WISDOM");
 	likability = new JButton("LIKABILITY");
 	enthusiasm = new JButton("ENTHUSIASM");
@@ -145,6 +152,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	    //exitButton.setPreferredSize(new Dimension(10,40));
 	panel2 = new JPanel();
 	panel2.add(exitButton);
+	panel2.add(rules);
 	panel2.add(heading);
 	panel2.add(wisdom);
 	panel2.add(likability);
@@ -161,6 +169,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//panel.add(playcard, BorderLayout.SOUTH);
 
 	exitButton.addActionListener(this); 
+	rules.addActionListener(this);
 	wisdom.addActionListener(this);
 	likability.addActionListener(this);
 	enthusiasm.addActionListener(this);
