@@ -134,9 +134,11 @@ public class GuiRedo extends JFrame implements ActionListener {
 	*/
 
 	ImageIcon card = createImageIcon("CARDS/FlorenceLo.png", "florence card");
+	ImageIcon enemyQM = createImageIcon("CARDS/question.png", "questionmark");
 	//playcard = new JLabel(card);
 	layout1 = new JPanel();
 	layout1.add(new JLabel(card));
+	layout1.add(new JLabel(enemyQM));
 
 	panel = new JPanel(new BorderLayout());//(new GridLayout(6,1));
 	    //panel.setMaximumSize(new Dimension (100,100));
