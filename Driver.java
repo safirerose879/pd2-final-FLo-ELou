@@ -3,24 +3,27 @@ import java.util.Scanner;
 
 public class Driver{
     public static int numGames = 1;
+    public static boolean won = false;
 
     
-    public static void PlayGame(Player B){
-    	Player A = new Player();
-    	Deck2 SavedDeck = new Deck2();
+    public static void Refill(Player A){
+    	Deck3 SavedDeck = new Deck3();
     	for(int i = 0 ;i<A.one.Starter.size() ;i++){
     	    SavedDeck.add(A.one.Starter.get(i));
     	}
 
-    	System.out.println(SavedDeck.ShowDeck());
-
-    	//B = new Player();
+    	//System.out.println(SavedDeck.ShowDeck()); 
     	
-    	System.out.println("Your opponent's deck consists of: \n" + B.one.ShowDeck());
+    	while(A.one.size() != 0){
+			A.one.remove(0);
+		}
+		for(int i = 0;i< SavedDeck.size() ;i++){
+			A.one.add(SavedDeck.get(i));
+		}
+		//System.out.println(A.one.ShowDeck());
     	
-    	System.out.println("Level: " + A.getLevel());
-    	System.out.println("Experience: " + A.getExp());
-
+    }	
+    public static void ShowGame(){
     	if(numGames == 1){
     		System.out.println("Welcome to your " + numGames +"st game.");	
     	}
@@ -35,22 +38,26 @@ public class Driver{
     	else{
     		System.out.println("Welcome to your " + numGames +"th game.");
     	}
+
+    }
+    public static void PlayGame(Player A, Player B){
     	
-    	//System.out.println("Your first opponent is FloEm.");
+    	won = false;
+    	System.out.println("Your deck consists of: \n" + A.one.ShowDeck());
+    	System.out.println("Your opponent's deck consists of: \n" + B.one.ShowDeck());
+    	
+    	System.out.println("Level: " + A.getLevel());
+    	System.out.println("Experience: " + A.getExp());
 
     	while(B.one.Starter.size() != 0 && A.one.Starter.size() != 0){
-    		
+    	
     		//System.out.println(A.one.Starter.size());
     		//System.out.println(A.one.ShowDeck());
     		
     		System.out.println(A.one.Draw());
     		
-    		if(A.one.Starter.size() == 0){
-    			System.out.println("I'm so sorry but you lost ....MWAHAHAHAHA...Better luck next time!");
-    			break;
-    		}
     		
-    		Deck2 Tied = new Deck2();
+    		Deck3 Tied = new Deck3();
 
     	    System.out.println("Which aspect do you what to use? \n Type: w for Wisdom, l for Likability, e for Enthusiasm, c for Charisma, and b for Bravery.");
     	    Scanner c = new Scanner(System.in);
@@ -248,24 +255,24 @@ public class Driver{
     	    else {
     	    	System.out.println("I'm sorry. Please type in w, l, e, c or b");
     	    }
-    	    
+    	        	    
     	}
 
-    	if(A.one.size() > 0){
+	    if(B.one.Starter.size() == 0 && A.one.Starter.size() > 0){
     		System.out.println("Good job you won!");
-    		
-    		while(A.one.size() != 0){
-    			A.one.remove(0);
-    		}
-    		for(int i = 0;i< SavedDeck.size() ;i++){
-    			A.one.add(SavedDeck.get(i));
-    		}
-    		
     		A.exp += 10;
     		System.out.println(A.levelup());
     		numGames++;
+    		won = true;
     		
     	}
+	    
+
+		if(A.one.Starter.size() == 0){
+			System.out.println("I'm so sorry but you lost ....MWAHAHAHAHA...Better luck next time!");
+			won = false;
+			//break;
+		}
 
     	
     }
@@ -284,28 +291,73 @@ public class Driver{
 	    System.out.println("Please enter your name.");
 	    String name = b.next();
 	    System.out.println("Welcome to the game " + name + ".");
+	
+	    Player A = new Player();
+
+		Player FloEm = new Player();
+		
+		Player Wooky = new Player();
+		WookyungLee W = new WookyungLee();
+		Wooky.one.Starter.add(W);
+		Wooky.one.shuffle();
+
+		Player Flo = new Player();
+		FlorenceLo F = new FlorenceLo();
+		Flo.one.Starter.add(F);
+		Flo.one.shuffle();
+		
+		ShowGame();
+		PlayGame(A, FloEm);
+		if (won){	
+			Refill(A);
+			ShowGame();
+			Player FloEm2 = new Player();
+			PlayGame(A, FloEm2);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			Player FloEm3 = new Player();
+			PlayGame(A, FloEm3);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			Player FloEm4 = new Player();
+			PlayGame(A, FloEm4);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			Player FloEm5 = new Player();
+			PlayGame(A, FloEm5);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			Player FloEm6 = new Player();
+			PlayGame(A, FloEm6);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Wooky);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Flo);
+		}
+
+	
+	
 	}
 	else{
 	    System.out.println("Oh you want to leave. Please come back and play soon.");
 	}
 
+	
 
-	Player FloEm = new Player();
-	
-	Player Wooky = new Player();
-	WookyungLee W = new WookyungLee();
-	Wooky.one.Starter.add(W);
-	Wooky.one.shuffle();
-
-	Player Flo = new Player();
-	FlorenceLo F = new FlorenceLo();
-	Flo.one.add(F);
-	Flo.one.shuffle();
-	
-	
-	//PlayGame(FloEm);
-	PlayGame(Wooky);
-	PlayGame(Flo);
 	
     }
 
