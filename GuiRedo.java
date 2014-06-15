@@ -14,11 +14,15 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel,layout1,panel2, message, begCards;
+    private JPanel panel,layout1,panel2, message, begCards, rulesIntro;
 
     private Deck3 d = new Deck3();
-    private Player A = new Player();
-    private Player B = new Player();
+
+    private Player3 A = new Player3();
+    //private Player A = new Player();
+    //private Player B = new Player();
+    private ImageIcon card;
+    private ImageIcon enemyQM;
 
     private int numShuffles;
 
@@ -39,12 +43,12 @@ public class GuiRedo extends JFrame implements ActionListener {
 		System.exit(0);
 	    }
         } 
-
 	if (e.getSource() == rules){
 	    message = new JPanel();
 	    message.add(new JLabel("Here are the rules:"));
 	    JOptionPane.showMessageDialog(null, message);
 	}
+
 	if (e.getSource() == wisdom){
 	    message = new JPanel();
 	    FlorenceLo f = new FlorenceLo();
@@ -118,15 +122,33 @@ public class GuiRedo extends JFrame implements ActionListener {
 
     public void PlayGameGUI(Player3 B){
 	begCards = new JPanel();
-	Player3 A = new Player3();
+	rulesIntro = new JPanel();
+
 	for (int i = 0; i < A.one.Starter.size(); i++){
 	    d.add(A.one.Starter.get(i));
 	    d.makeLL();
 	}
+	
+	int reply = JOptionPane.showConfirmDialog(null, "Welcome to a Emma [F]Lo[u] and Co. production. Would you like to know about the rules?");
+	    if (reply == JOptionPane.YES_OPTION){
+		rulesIntro.add(new JLabel("The rules are:"));
+		JOptionPane.showMessageDialog(null, rulesIntro);
+	    }
+	    else{
+		rulesIntro.add(new JLabel("Great! If you ever forget anything, you can always press the 'RULES' button on the top. Enjoy the game!")); 
+		JOptionPane.showMessageDialog(null, rulesIntro);
+	    }
+
 	begCards.add(new JLabel("Your cards are:" + "\n" + d.toString()));
 	JOptionPane.showMessageDialog(null, begCards);
-	begCards.add(new JLabel("Your opponent's cards are:")); //+ "\n" + B.one.makeLL().toString()));
-	JOptionPane.showMessageDialog(null, begCards);
+	/*begCards.add(new JLabel("Your opponent's cards are:" + "\n" + B.one.Starter.makeLL().toString()));
+	  JOptionPane.showMessageDialog(null, begCards);*/
+
+	//ACTUAL GAME COMMENCES
+
+	while(B.one.Starter.size()!=0 && A.one.Starter.size() !=0){
+
+	}
 
     }
 
@@ -160,10 +182,11 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//buttons.add(heading);
 	*/
 
-	ImageIcon card = createImageIcon("CARDS/FlorenceLo.png", "florence card");
-	ImageIcon enemyQM = createImageIcon("CARDS/question.png", "questionmark");
+	card = createImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card");
+	enemyQM = createImageIcon("CARDS/question.png", "questionmark");
 	//playcard = new JLabel(card);
 	layout1 = new JPanel();
+	//layout1.add(new JLabel(card));
 	layout1.add(new JLabel(card));
 	layout1.add(new JLabel(enemyQM));
 

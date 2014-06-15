@@ -73,6 +73,11 @@ public class Deck3 extends ArrayList<Cards> {
     			+ "Bravery: "+ a.getBravery() + "\n";
     }
 
+    public String DrawName(){
+	Cards a = Starter.get(0);
+	return a.getName();
+    }
+
     public String ShowDeck(){
 	String str = "";
 	for(int i = 0;i<Starter.size() ;i++){
