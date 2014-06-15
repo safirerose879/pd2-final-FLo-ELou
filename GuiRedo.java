@@ -16,6 +16,10 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JTextArea ta;
     private JPanel panel,layout1,panel2, message;
 
+    private Deck3 d = new Deck3();
+
+    private int numShuffles;
+
     private class myKeyListener implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 	}
@@ -63,6 +67,30 @@ public class GuiRedo extends JFrame implements ActionListener {
 	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getBravery()) + " BRAVERY points"));
 	    JOptionPane.showMessageDialog(null, message);
 	}
+
+	if(e.getSource() == shuffle){
+	    if (numShuffles == 2){
+		message = new JPanel();
+		d.shuffle();
+		d.makeLL();
+		numShuffles = numShuffles - 1;
+		message.add(new JLabel("You have " + String.valueOf(numShuffles) + " shuffle left."));
+		JOptionPane.showMessageDialog(null, message);
+	    }
+	    else if (numShuffles > 0){
+		message = new JPanel();
+		d.shuffle();
+		d.makeLL();
+		numShuffles = numShuffles - 1;
+		message.add(new JLabel("You have " + String.valueOf(numShuffles) + " shuffles left."));
+		JOptionPane.showMessageDialog(null, message);
+	    }
+	    else{
+		message = new JPanel();
+		message.add(new JLabel("Sorry, you don't have any shuffles left."));
+		JOptionPane.showMessageDialog(null, message);
+	    }
+	    }
     }
 
     protected ImageIcon createImageIcon(String path,
@@ -77,6 +105,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     }
 
     public GuiRedo(){
+	numShuffles = 3;
 
 	pane = new JFrame();
 	pane.getContentPane().setLayout(new FlowLayout());
@@ -133,9 +162,9 @@ public class GuiRedo extends JFrame implements ActionListener {
 	wisdom.addActionListener(this);
 	likability.addActionListener(this);
 	enthusiasm.addActionListener(this);
-
 	charisma.addActionListener(this);
 	bravery.addActionListener(this);
+	shuffle.addActionListener(this);
 
 	pane.add(panel);
 
