@@ -51,3 +51,7 @@ DATE		NAME		WHAT YOU DID
 6-13-14		Flo		Got two games but exp doesn't work.
 
 6-14-14		Elou		Deck3 can implement LinkedLists + Gui has shuffle function
+
+6-14-14		Flo		Still trying to implement more games.
+
+6-15-14		Flo		Used Emma's working Linked List Deck3.
