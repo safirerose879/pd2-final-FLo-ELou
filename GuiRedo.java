@@ -14,12 +14,15 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel,layout1,panel2, message;
+    private JPanel panel,layout1,panel2, message, begCards;
 
     private Deck3 d = new Deck3();
+    private Player A = new Player();
+    private Player B = new Player();
 
     private int numShuffles;
 
+    //METHODS
     private class myKeyListener implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 	}
@@ -27,11 +30,14 @@ public class GuiRedo extends JFrame implements ActionListener {
 	}
 	public void keyTyped(KeyEvent e) {  
 	}
-    } //SHUFFLE BUTTON = MAX 3 SHUFFLES
+    } 
     
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == exitButton) {
-            System.exit(0);
+            int reply = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit? Your progress will not be saved.");
+	    if (reply == JOptionPane.YES_OPTION){
+		System.exit(0);
+	    }
         } 
 
 	if (e.getSource() == rules){
@@ -110,6 +116,20 @@ public class GuiRedo extends JFrame implements ActionListener {
 	}
     }
 
+    public void PlayGameGUI(Player3 B){
+	begCards = new JPanel();
+	Player3 A = new Player3();
+	for (int i = 0; i < A.one.Starter.size(); i++){
+	    d.add(A.one.Starter.get(i));
+	    d.makeLL();
+	}
+	begCards.add(new JLabel("Your cards are:" + "\n" + d.toString()));
+	JOptionPane.showMessageDialog(null, begCards);
+	begCards.add(new JLabel("Your opponent's cards are:")); //+ "\n" + B.one.makeLL().toString()));
+	JOptionPane.showMessageDialog(null, begCards);
+
+    }
+
     public GuiRedo(){
 	numShuffles = 3;
 
@@ -185,6 +205,8 @@ public class GuiRedo extends JFrame implements ActionListener {
 	pane.setSize(850,800);
 	pane.setLocation(250,100);
 
+	Player3 Floem = new Player3();
+	PlayGameGUI(Floem);
 
 	/*JPanel gui = new JPanel(new BorderLayout());
                 JPanel labels = new JPanel();
