@@ -49,3 +49,5 @@ DATE		NAME		WHAT YOU DID
 6-13-14		Elou		Stared at Deck3 and cried.
 
 6-13-14		Flo		Got two games but exp doesn't work.
+
+6-14-14		Elou		Deck3 can implement LinkedLists + Gui has shuffle function
