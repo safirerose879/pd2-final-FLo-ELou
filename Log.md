@@ -54,4 +54,5 @@ DATE		NAME		WHAT YOU DID
 
 6-14-14		Flo		Still trying to implement more games.
 
-6-15-14		Flo		Used Emma's working Linked List Deck3. YES IT WORKSSSS FOR MULTIPLE GAMES!!!!!
+6-15-14		Flo		Used Emma's working Linked List Deck3. YES IT WORKSSSS FOR MULTIPLE GAMES!!!!! Seems like Refill isnt working...but it's still beast.
+

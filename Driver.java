@@ -4,21 +4,28 @@ import java.util.Scanner;
 public class Driver{
     public static int numGames = 1;
     public static boolean won = false;
+    public static Deck3 SavedDeck;
 
     
     public static void Refill(Player A){
-    	Deck3 SavedDeck = new Deck3();
+    	SavedDeck = new Deck3();
     	for(int i = 0 ;i<A.one.Starter.size() ;i++){
-    	    SavedDeck.add(A.one.Starter.get(i));
+    	    SavedDeck.Starter.add(A.one.Starter.get(i));
     	}
 
     	//System.out.println(SavedDeck.ShowDeck()); 
     	
-    	while(A.one.size() != 0){
-			A.one.remove(0);
+    	//while(A.one.Starter.size() != 0){
+			//A.one.Starter.remove(0);
+		//}
+    	
+
+		for(int i = 0;i< A.one.Starter.size() ;i++){
+			A.one.Starter.remove(0);
 		}
-		for(int i = 0;i< SavedDeck.size() ;i++){
-			A.one.add(SavedDeck.get(i));
+		
+		for(int i = 0;i< SavedDeck.Starter.size() ;i++){
+			A.one.Starter.add(SavedDeck.Starter.get(i));
 		}
 		//System.out.println(A.one.ShowDeck());
     	
