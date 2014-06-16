@@ -22,6 +22,7 @@ public class Player{
     
     public String levelup(){
     	if(exp == level * 50){
+	    one.addSpCard();
     		level ++;
     		return "Congrats, you leveled up! -insert coco's famous smiley faces- Your level is " + level + ". You have " + exp + " experience.";
     	}else{
