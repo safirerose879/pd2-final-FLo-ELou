@@ -9,8 +9,8 @@ public class Driver{
     
     public static void Refill(Player A){
 
-    	//System.out.println(SavedDeck.ShowDeck()); 
-	System.out.println(A.one.ShowDeck());
+       	//System.out.println(SavedDeck.ShowDeck()); 
+	/*System.out.println(A.one.ShowDeck());
     	
     	while(A.one.Starter.size() != 0){
 	    A.one.Starter.remove(0);
@@ -25,9 +25,17 @@ public class Driver{
 		
 	for(int k = 0;k< SavedDeck.Starter.size() ;k++){
 	    A.one.Starter.add(SavedDeck.Starter.get(k));
-	}
+	    }*/
 	//System.out.println(A.one.ShowDeck());
     	
+	
+	Bob b = new Bob();
+	Dave d = new Dave();
+
+	while(A.one.Starter.size() < 10){
+	    A.one.Starter.add(b);
+	    A.one.Starter.add(d);
+	}
     }	
     public static void ShowGame(){
     	if(numGames == 1){
