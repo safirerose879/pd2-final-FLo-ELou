@@ -14,11 +14,13 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel,layout1,panel2, message, begCards, rulesIntro;
+    private JPanel panel,layout1,panel2, message, begCards, rulesIntro, result, result1;
 
     private Deck3 d = new Deck3();
+    private Deck3 Tied = new Deck3();
 
     private Player3 A = new Player3();
+    private Player3 B = new Player3();
     //private Player A = new Player();
     //private Player B = new Player();
     private ImageIcon card;
@@ -37,6 +39,9 @@ public class GuiRedo extends JFrame implements ActionListener {
     } 
     
     public void actionPerformed(ActionEvent e) {
+	result = new JPanel();
+	result1 = new JPanel();
+
         if (e.getSource() == exitButton) {
             int reply = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit? Your progress will not be saved.");
 	    if (reply == JOptionPane.YES_OPTION){
@@ -51,18 +56,103 @@ public class GuiRedo extends JFrame implements ActionListener {
 
 	if (e.getSource() == wisdom){
 	    message = new JPanel();
-	    FlorenceLo f = new FlorenceLo();
-	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getWisdom()) + " WISDOM points"));
+	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getWisdom()) + " WISDOM points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getWisdom()) + " WISDOM points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
+
+	    if (A.one.Starter.get(0).getWisdom() > B.one.Starter.get(0).getWisdom()){
+		result.add(new JLabel("You won this round! Your opponent loses"));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You got the tied cards as well."));	   
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}
+		A.one.Starter.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+	    }
+
+	    else if (A.one.Starter.get(0).getWisdom() < B.one.Starter.get(0).getWisdom()){
+		result.add(new JLabel("You lost this round...You lost a card."));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You lost the tied cards as well."));
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}		
+		B.one.Starter.add(A.one.Starter.get(0));
+		A.one.Starter.remove(0);
+	    }
+
+	    else{
+		result.add(new JLabel("It's a tie! You both lose your card."));
+		Tied.add(A.one.Starter.get(0));
+		Tied.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+		A.one.Starter.remove(0);
+		JOptionPane.showMessageDialog(null, result);
+	    } 
 	}
  
 	if (e.getSource() == likability){
-	    message = new JPanel();
-	    FlorenceLo f = new FlorenceLo();
-	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getLikability()) + " LIKABILITY points"));
-	    JOptionPane.showMessageDialog(null, message);
-	}
 
+	    message = new JPanel();
+	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getLikability()) + " LIKABILITY points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getLikability()) + " LIKABILITY points.")) ;
+	    JOptionPane.showMessageDialog(null, message);
+
+	    if (A.one.Starter.get(0).getLikability() > B.one.Starter.get(0).getLikability()){
+		result.add(new JLabel("You won this round! Your opponent loses"));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You got the tied cards as well."));	   
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}
+		A.one.Starter.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+	    }
+
+	    else if (A.one.Starter.get(0).getLikability() < B.one.Starter.get(0).getLikability()){
+		result.add(new JLabel("You lost this round...You lost a card."));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You lost the tied cards as well."));
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}		
+		B.one.Starter.add(A.one.Starter.get(0));
+		A.one.Starter.remove(0);
+	    }
+
+	    else{
+		result.add(new JLabel("It's a tie! You both lose your card."));
+		Tied.add(A.one.Starter.get(0));
+		Tied.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+		A.one.Starter.remove(0);
+		JOptionPane.showMessageDialog(null, result);
+	    } 
+	}
+ 
 	if (e.getSource() == enthusiasm){
 	    message = new JPanel();
 	    FlorenceLo f = new FlorenceLo();
@@ -147,6 +237,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//ACTUAL GAME COMMENCES
 
 	while(B.one.Starter.size()!=0 && A.one.Starter.size() !=0){
+	    card = createImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card");
 
 	}
 
@@ -169,6 +260,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	shuffle = new JButton ("SHUFFLE");
 	//nextGame = new JButton ("Proceed to the next round");
 	heading = new JLabel ("CARD GAME!");
+
 	/*
 	buttons = new Container();
 	buttons.setLayout(new FlowLayout());
@@ -182,7 +274,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//buttons.add(heading);
 	*/
 
-	card = createImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card");
+	card = createImageIcon("CARDS/question.png", "PlayerA card");
 	enemyQM = createImageIcon("CARDS/question.png", "questionmark");
 	//playcard = new JLabel(card);
 	layout1 = new JPanel();
