@@ -313,7 +313,7 @@ public class Driver{
 
 
 	    Player FloEm = new Player();
-<<<<<<< HEAD
+	    /*<<<<<<< HEAD
 		
 =======
 
@@ -374,7 +374,7 @@ public class Driver{
 	    Flo.one.shuffle();
 
 
->>>>>>> ca4e2c6da5705844c2eb4b5140bbe6909b36af1c
+	    >>>>>>> ca4e2c6da5705844c2eb4b5140bbe6909b36af1c*/
 	    ShowGame();
 	    PlayGame(A, FloEm);
 	    if (won){	
