@@ -155,23 +155,149 @@ public class GuiRedo extends JFrame implements ActionListener {
  
 	if (e.getSource() == enthusiasm){
 	    message = new JPanel();
-	    FlorenceLo f = new FlorenceLo();
-	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getEnthusiasm()) + " ENTHUSIASM points"));
+	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getEnthusiasm()) + " ENTHUSIASM points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getEnthusiasm()) + " ENTHUSIASM points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
+
+	    if (A.one.Starter.get(0).getEnthusiasm() > B.one.Starter.get(0).getEnthusiasm()){
+		result.add(new JLabel("You won this round! Your opponent loses"));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You got the tied cards as well."));	   
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}
+		A.one.Starter.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+	    }
+
+	    else if (A.one.Starter.get(0).getEnthusiasm() < B.one.Starter.get(0).getEnthusiasm()){
+		result.add(new JLabel("You lost this round...You lost a card."));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You lost the tied cards as well."));
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}		
+		B.one.Starter.add(A.one.Starter.get(0));
+		A.one.Starter.remove(0);
+	    }
+
+	    else{
+		result.add(new JLabel("It's a tie! You both lose your card."));
+		Tied.add(A.one.Starter.get(0));
+		Tied.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+		A.one.Starter.remove(0);
+		JOptionPane.showMessageDialog(null, result);
+	    } 
 	}
 
 	if (e.getSource() == charisma){
 	    message = new JPanel();
-	    FlorenceLo f = new FlorenceLo();
-	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getCharisma()) + " CHARISMA points"));
+	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getCharisma()) + " CHARISMA points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getCharisma()) + " CHARISMA points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
+
+	    if (A.one.Starter.get(0).getCharisma() > B.one.Starter.get(0).getCharisma()){
+		result.add(new JLabel("You won this round! Your opponent loses"));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You got the tied cards as well."));	   
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}
+		A.one.Starter.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+	    }
+
+	    else if (A.one.Starter.get(0).getCharisma() < B.one.Starter.get(0).getCharisma()){
+		result.add(new JLabel("You lost this round...You lost a card."));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You lost the tied cards as well."));
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}		
+		B.one.Starter.add(A.one.Starter.get(0));
+		A.one.Starter.remove(0);
+	    }
+
+	    else{
+		result.add(new JLabel("It's a tie! You both lose your card."));
+		Tied.add(A.one.Starter.get(0));
+		Tied.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+		A.one.Starter.remove(0);
+		JOptionPane.showMessageDialog(null, result);
+	    } 
 	}
 
 	if (e.getSource() == bravery){
 	    message = new JPanel();
-	    FlorenceLo f = new FlorenceLo();
-	    message.add(new JLabel(f.getName() + " has " + String.valueOf(f.getBravery()) + " BRAVERY points"));
+	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getBravery()) + " BRAVERY points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getBravery()) + " BRAVERY points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
+
+	    if (A.one.Starter.get(0).getBravery() > B.one.Starter.get(0).getBravery()){
+		result.add(new JLabel("You won this round! Your opponent loses"));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You got the tied cards as well."));	   
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}
+		A.one.Starter.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+	    }
+
+	    else if (A.one.Starter.get(0).getBravery() < B.one.Starter.get(0).getBravery()){
+		result.add(new JLabel("You lost this round...You lost a card."));
+		JOptionPane.showMessageDialog(null, result);
+		if(Tied.size()!=0){
+		    result1.add(new JLabel("You lost the tied cards as well."));
+		    JOptionPane.showMessageDialog(null, result1);
+		    for (int i = 0; i < Tied.size(); i++){
+			A.one.Starter.add(Tied.get(i));
+		    }
+		    for (int i = 0; i < Tied.size(); i++){
+			Tied.remove(i);
+		    }
+		}		
+		B.one.Starter.add(A.one.Starter.get(0));
+		A.one.Starter.remove(0);
+	    }
+
+	    else{
+		result.add(new JLabel("It's a tie! You both lose your card."));
+		Tied.add(A.one.Starter.get(0));
+		Tied.add(B.one.Starter.get(0));
+		B.one.Starter.remove(0);
+		A.one.Starter.remove(0);
+		JOptionPane.showMessageDialog(null, result);
+	    } 
 	}
 
 	if(e.getSource() == shuffle){
