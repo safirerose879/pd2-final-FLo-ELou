@@ -28,7 +28,7 @@ public class Driver{
 	  }*/
 	//System.out.println(A.one.ShowDeck());
     	
-	
+
 	Bob b = new Bob();
 	Dave d = new Dave();
 
@@ -268,7 +268,7 @@ public class Driver{
     	    else {
     	    	System.out.println("I'm sorry. Please type in w, l, e, c or b");
     	    }
-	    
+
     	}
 
 	if(B.one.Starter.size() == 0 && A.one.Starter.size() > 0){
@@ -279,7 +279,7 @@ public class Driver{
 	    won = true;
     		
     	}
-	    
+
 
 	if(A.one.Starter.size() == 0){
 	    System.out.println("I'm so sorry but you lost ....MWAHAHAHAHA...Better luck next time!");
@@ -289,13 +289,13 @@ public class Driver{
 
     	
     }
-	
+
 
     public static void main(String args[]){
 
 	System.out.println("\n");
 
-	System.out.println("Welcome to the wonderous world where Stuy students verses students, students vs teachers and the most exciting, teachers vs teachers. Please enjoy this game!  \n\nÂ© Emma [F]Lo[u] and co. \n                             Press 's' to Start. \n");
+	System.out.println("Welcome to the wonderous world where Stuy students verses students, students vs teachers and the most exciting, teachers vs teachers. Please enjoy this game!  \n\n© Emma [F]Lo[u] and co. \n                             Press 's' to Start. \n");
 
 	Scanner a = new Scanner(System.in);
 	String answer = a.next();
@@ -304,7 +304,7 @@ public class Driver{
 	    System.out.println("Please enter your name.");
 	    String name = b.next();
 	    System.out.println("Welcome to the game " + name + ".");
-	
+
 	    Player A = new Player();
 	    SavedDeck = new Deck3();
 	    for(int i = 0 ;i<A.one.Starter.size() ;i++){
@@ -313,7 +313,68 @@ public class Driver{
 
 
 	    Player FloEm = new Player();
+<<<<<<< HEAD
 		
+=======
+
+	    Player Wooky = new Player();
+	    WookyungLee W = new WookyungLee();
+	    Wooky.one.Starter.add(W);
+	    Wooky.one.shuffle();
+
+	    Player Flo = new Player();
+	    FlorenceLo F = new FlorenceLo();
+	    Flo.one.Starter.add(F);
+	    Flo.one.shuffle();
+
+	    Player Emma = new Player();
+	    EmmaLou E = new EmmaLou();
+	    Flo.one.Starter.add(E);
+	    Flo.one.shuffle();
+
+
+	    Player Zamansky = new Player();
+	    Zamansky Z = new Zamansky();
+	    Flo.one.Starter.add(Z);
+	    Flo.one.shuffle();
+
+	    Player Coco = new Player();
+	    Cocoros C = new Cocoros();
+	    Flo.one.Starter.add(C);
+	    Flo.one.shuffle();
+
+	    Player Brown = new Player();
+	    BrownMykolyk B = new BrownMykolyk();
+	    Flo.one.Starter.add(B);
+	    Flo.one.shuffle();
+
+	    Player Angela = new Player();
+	    AngelaLin AL = new AngelaLin();
+	    Flo.one.Starter.add(AL);
+	    Flo.one.shuffle();
+
+	    Player Jerry = new Player();
+	    JerryDai J = new JerryDai();
+	    Flo.one.Starter.add(J);
+	    Flo.one.shuffle();
+
+	    Player Kevin = new Player();
+	    KevinKan K = new KevinKan();
+	    Flo.one.Starter.add(K);
+	    Flo.one.shuffle();
+
+	    Player Lawrence = new Player();
+	    LawrenceLim L = new LawrenceLim();
+	    Flo.one.Starter.add(L);
+	    Flo.one.shuffle();
+
+	    Player Michele = new Player();
+	    MicheleChan M = new MicheleChan();
+	    Flo.one.Starter.add(F);
+	    Flo.one.shuffle();
+
+
+>>>>>>> ca4e2c6da5705844c2eb4b5140bbe6909b36af1c
 	    ShowGame();
 	    PlayGame(A, FloEm);
 	    if (won){	
@@ -458,15 +519,15 @@ public class Driver{
 	    }
 
 	    System.out.println("Congrats!!! You won the game!!!! Hope you enjoyed this experience ^^.");	
-	
+
 	}
 	else{
 	    System.out.println("Oh you want to leave. Please come back and play soon.");
 	}
 
-	
 
-	
+
+
     }
 
 }

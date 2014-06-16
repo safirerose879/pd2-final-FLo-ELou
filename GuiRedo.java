@@ -14,7 +14,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
     private JTextArea ta;
-    private JPanel panel,layout1,panel2, message, begCards, rulesIntro, result, result1;
+    private JPanel panel,layout1,panel2, message, begCards, rulesIntro, result, result1, result2;
 
     private Deck3 d = new Deck3();
     private Deck3 Tied = new Deck3();
@@ -339,6 +339,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     public void PlayGameGUI(Player3 B){
 	begCards = new JPanel();
 	rulesIntro = new JPanel();
+	result2 = new JPanel();
 
 	for (int i = 0; i < A.one.Starter.size(); i++){
 	    d.add(A.one.Starter.get(i));
@@ -365,6 +366,17 @@ public class GuiRedo extends JFrame implements ActionListener {
 	while(B.one.Starter.size()!=0 && A.one.Starter.size() !=0){
 	    card = createImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card");
 
+	    if(B.one.Starter.size() == 0 && A.one.Starter.size() > 0){
+		result2.add(new JLabel("Good job. YOU WON!!"));
+		JOptionPane.showMessageDialog(null, result2);
+		//insert exp
+		//insert lvl up
+	    }
+	    if (A.one.Starter.size() == 0){
+		result2.add(new JLabel("SORRY 'BOUT THAT. BETTER LUCK NEXT TIME"));
+		JOptionPane.showMessageDialog(null, result2);
+	    }
+	    //insert won??
 	}
 
     }
