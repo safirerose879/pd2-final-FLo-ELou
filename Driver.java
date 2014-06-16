@@ -306,6 +306,53 @@ public class Driver{
 		Flo.one.Starter.add(F);
 		Flo.one.shuffle();
 		
+		Player Emma = new Player();
+		EmmaLou E = new EmmaLou();
+		Flo.one.Starter.add(E);
+		Flo.one.shuffle();
+		
+		
+		Player Zamansky = new Player();
+		Zamansky Z = new Zamansky();
+		Flo.one.Starter.add(Z);
+		Flo.one.shuffle();
+		
+		Player Coco = new Player();
+		Cocoros C = new Cocoros();
+		Flo.one.Starter.add(C);
+		Flo.one.shuffle();
+		
+		Player Brown = new Player();
+		BrownMykolyk B = new BrownMykolyk();
+		Flo.one.Starter.add(B);
+		Flo.one.shuffle();
+		
+		Player Angela = new Player();
+		AngelaLin AL = new AngelaLin();
+		Flo.one.Starter.add(AL);
+		Flo.one.shuffle();
+		
+		Player Jerry = new Player();
+		JerryDai J = new JerryDai();
+		Flo.one.Starter.add(J);
+		Flo.one.shuffle();
+		
+		Player Kevin = new Player();
+		KevinKan K = new KevinKan();
+		Flo.one.Starter.add(K);
+		Flo.one.shuffle();
+		
+		Player Lawrence = new Player();
+		LawrenceLim L = new LawrenceLim();
+		Flo.one.Starter.add(L);
+		Flo.one.shuffle();
+		
+		Player Michele = new Player();
+		MicheleChan M = new MicheleChan();
+		Flo.one.Starter.add(F);
+		Flo.one.shuffle();
+		
+		
 		ShowGame();
 		PlayGame(A, FloEm);
 		if (won){	
@@ -347,6 +394,51 @@ public class Driver{
 			Refill(A);
 			ShowGame();
 			PlayGame(A, Flo);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Angela);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Jerry);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Emma);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Zamansky);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Coco);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Brown);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Kevin);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Lawrence);
+		}
+		if (won){
+			Refill(A);
+			ShowGame();
+			PlayGame(A, Michele);
 		}
 
 	
