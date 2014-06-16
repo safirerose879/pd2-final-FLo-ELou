@@ -72,7 +72,7 @@ public class Driver{
     		
     		Deck3 Tied = new Deck3();
 
-    	    System.out.println("Which aspect do you what to use? \n Type: w for Wisdom, l for Likability, e for Enthusiasm, c for Charisma, and b for Bravery.");
+    	    System.out.println("Which aspect do you want to use? \n Type: w for Wisdom, l for Likability, e for Enthusiasm, c for Charisma, and b for Bravery.");
     	    Scanner c = new Scanner(System.in);
     	    String move = c.next();
     	    if(move.equals("w")){
