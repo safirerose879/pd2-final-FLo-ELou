@@ -56,3 +56,4 @@ DATE		NAME		WHAT YOU DID
 
 6-15-14		Flo		Used Emma's working Linked List Deck3. YES IT WORKSSSS FOR MULTIPLE GAMES!!!!! Seems like Refill isnt working...but it's still beast.
 
+6-16-14		Flo		A glitch in Refill and Tied but it works with the game.

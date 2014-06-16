@@ -8,26 +8,25 @@ public class Driver{
 
     
     public static void Refill(Player A){
-    	SavedDeck = new Deck3();
-    	for(int i = 0 ;i<A.one.Starter.size() ;i++){
-    	    SavedDeck.Starter.add(A.one.Starter.get(i));
-    	}
 
     	//System.out.println(SavedDeck.ShowDeck()); 
+	System.out.println(A.one.ShowDeck());
     	
-    	//while(A.one.Starter.size() != 0){
-			//A.one.Starter.remove(0);
-		//}
+    	while(A.one.Starter.size() != 0){
+	    A.one.Starter.remove(0);
+	}
+
+	System.out.println(A.one.ShowDeck());
     	
 
-		for(int i = 0;i< A.one.Starter.size() ;i++){
-			A.one.Starter.remove(0);
-		}
+	for(int j = 0;j< A.one.Starter.size() ;j++){
+	    A.one.Starter.remove(0);
+	}
 		
-		for(int i = 0;i< SavedDeck.Starter.size() ;i++){
-			A.one.Starter.add(SavedDeck.Starter.get(i));
-		}
-		//System.out.println(A.one.ShowDeck());
+	for(int k = 0;k< SavedDeck.Starter.size() ;k++){
+	    A.one.Starter.add(SavedDeck.Starter.get(k));
+	}
+	//System.out.println(A.one.ShowDeck());
     	
     }	
     public static void ShowGame(){
@@ -48,8 +47,7 @@ public class Driver{
 
     }
     public static void PlayGame(Player A, Player B){
-    	
-    	won = false;
+	won = false;
     	System.out.println("Your deck consists of: \n" + A.one.ShowDeck());
     	System.out.println("Your opponent's deck consists of: \n" + B.one.ShowDeck());
     	
@@ -262,15 +260,15 @@ public class Driver{
     	    else {
     	    	System.out.println("I'm sorry. Please type in w, l, e, c or b");
     	    }
-    	        	    
+	    
     	}
 
-	    if(B.one.Starter.size() == 0 && A.one.Starter.size() > 0){
-    		System.out.println("Good job you won!");
-    		A.exp += 10;
-    		System.out.println(A.levelup());
-    		numGames++;
-    		won = true;
+	if(B.one.Starter.size() == 0 && A.one.Starter.size() > 0){
+	    System.out.println("Good job you won!");
+	    A.exp += 10;
+	    System.out.println(A.levelup());
+	    numGames++;
+	    won = true;
     		
     	}
 	    
@@ -300,155 +298,160 @@ public class Driver{
 	    System.out.println("Welcome to the game " + name + ".");
 	
 	    Player A = new Player();
+	    SavedDeck = new Deck3();
+	    for(int i = 0 ;i<A.one.Starter.size() ;i++){
+		SavedDeck.Starter.add(A.one.Starter.get(i));
+	    }
 
-		Player FloEm = new Player();
-		
-		Player Wooky = new Player();
-		WookyungLee W = new WookyungLee();
-		Wooky.one.Starter.add(W);
-		Wooky.one.shuffle();
 
-		Player Flo = new Player();
-		FlorenceLo F = new FlorenceLo();
-		Flo.one.Starter.add(F);
-		Flo.one.shuffle();
+	    Player FloEm = new Player();
 		
-		Player Emma = new Player();
-		EmmaLou E = new EmmaLou();
-		Flo.one.Starter.add(E);
-		Flo.one.shuffle();
+	    Player Wooky = new Player();
+	    WookyungLee W = new WookyungLee();
+	    Wooky.one.Starter.add(W);
+	    Wooky.one.shuffle();
+
+	    Player Flo = new Player();
+	    FlorenceLo F = new FlorenceLo();
+	    Flo.one.Starter.add(F);
+	    Flo.one.shuffle();
 		
-		
-		Player Zamansky = new Player();
-		Zamansky Z = new Zamansky();
-		Flo.one.Starter.add(Z);
-		Flo.one.shuffle();
-		
-		Player Coco = new Player();
-		Cocoros C = new Cocoros();
-		Flo.one.Starter.add(C);
-		Flo.one.shuffle();
-		
-		Player Brown = new Player();
-		BrownMykolyk B = new BrownMykolyk();
-		Flo.one.Starter.add(B);
-		Flo.one.shuffle();
-		
-		Player Angela = new Player();
-		AngelaLin AL = new AngelaLin();
-		Flo.one.Starter.add(AL);
-		Flo.one.shuffle();
-		
-		Player Jerry = new Player();
-		JerryDai J = new JerryDai();
-		Flo.one.Starter.add(J);
-		Flo.one.shuffle();
-		
-		Player Kevin = new Player();
-		KevinKan K = new KevinKan();
-		Flo.one.Starter.add(K);
-		Flo.one.shuffle();
-		
-		Player Lawrence = new Player();
-		LawrenceLim L = new LawrenceLim();
-		Flo.one.Starter.add(L);
-		Flo.one.shuffle();
-		
-		Player Michele = new Player();
-		MicheleChan M = new MicheleChan();
-		Flo.one.Starter.add(F);
-		Flo.one.shuffle();
+	    Player Emma = new Player();
+	    EmmaLou E = new EmmaLou();
+	    Flo.one.Starter.add(E);
+	    Flo.one.shuffle();
 		
 		
+	    Player Zamansky = new Player();
+	    Zamansky Z = new Zamansky();
+	    Flo.one.Starter.add(Z);
+	    Flo.one.shuffle();
+		
+	    Player Coco = new Player();
+	    Cocoros C = new Cocoros();
+	    Flo.one.Starter.add(C);
+	    Flo.one.shuffle();
+		
+	    Player Brown = new Player();
+	    BrownMykolyk B = new BrownMykolyk();
+	    Flo.one.Starter.add(B);
+	    Flo.one.shuffle();
+		
+	    Player Angela = new Player();
+	    AngelaLin AL = new AngelaLin();
+	    Flo.one.Starter.add(AL);
+	    Flo.one.shuffle();
+		
+	    Player Jerry = new Player();
+	    JerryDai J = new JerryDai();
+	    Flo.one.Starter.add(J);
+	    Flo.one.shuffle();
+		
+	    Player Kevin = new Player();
+	    KevinKan K = new KevinKan();
+	    Flo.one.Starter.add(K);
+	    Flo.one.shuffle();
+		
+	    Player Lawrence = new Player();
+	    LawrenceLim L = new LawrenceLim();
+	    Flo.one.Starter.add(L);
+	    Flo.one.shuffle();
+		
+	    Player Michele = new Player();
+	    MicheleChan M = new MicheleChan();
+	    Flo.one.Starter.add(F);
+	    Flo.one.shuffle();
+		
+		
+	    ShowGame();
+	    PlayGame(A, FloEm);
+	    if (won){	
+		Refill(A);
 		ShowGame();
-		PlayGame(A, FloEm);
-		if (won){	
-			Refill(A);
-			ShowGame();
-			Player FloEm2 = new Player();
-			PlayGame(A, FloEm2);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			Player FloEm3 = new Player();
-			PlayGame(A, FloEm3);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			Player FloEm4 = new Player();
-			PlayGame(A, FloEm4);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			Player FloEm5 = new Player();
-			PlayGame(A, FloEm5);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			Player FloEm6 = new Player();
-			PlayGame(A, FloEm6);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Wooky);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Flo);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Angela);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Jerry);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Emma);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Zamansky);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Coco);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Brown);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Kevin);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Lawrence);
-		}
-		if (won){
-			Refill(A);
-			ShowGame();
-			PlayGame(A, Michele);
-		}
+		Player FloEm2 = new Player();
+		PlayGame(A, FloEm2);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		Player FloEm3 = new Player();
+		PlayGame(A, FloEm3);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		Player FloEm4 = new Player();
+		PlayGame(A, FloEm4);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		Player FloEm5 = new Player();
+		PlayGame(A, FloEm5);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		Player FloEm6 = new Player();
+		PlayGame(A, FloEm6);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Wooky);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Flo);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Angela);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Jerry);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Emma);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Zamansky);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Coco);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Brown);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Kevin);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Lawrence);
+	    }
+	    if (won){
+		Refill(A);
+		ShowGame();
+		PlayGame(A, Michele);
+	    }
 
-	
+	    System.out.println("Congrats!!! You won the game!!!! Hope you enjoyed this experience ^^.");	
 	
 	}
 	else{
