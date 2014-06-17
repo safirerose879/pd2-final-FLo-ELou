@@ -13,6 +13,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     private Container buttons;
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
+    private JLabel card = new JLabel(new ImageIcon("question.png"));
     private JTextArea ta;
     private JPanel panel,layout1,panel2, message, begCards, rulesIntro, result, result1, result2;
 
@@ -23,7 +24,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     private Player3 B = new Player3();
     //private Player A = new Player();
     //private Player B = new Player();
-    private ImageIcon card;
+    //private ImageIcon card;
     private ImageIcon enemyQM;
 
     private int numShuffles;
@@ -356,7 +357,14 @@ public class GuiRedo extends JFrame implements ActionListener {
 		JOptionPane.showMessageDialog(null, rulesIntro);
 	    }
 
-	begCards.add(new JLabel("Your cards are:" + "\n" + d.toString()));
+	    Object[]options = {"Let's do this!", "Nah, I'll come back another time."};
+	    int n = JOptionPane.showOptionDialog(null, "Would you like to start the game?","Start the Game?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+	    if(n ==1){
+		System.exit(0);
+	    }
+	    card.setIcon(new ImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card"));
+
+	begCards.add(new JLabel("Your cards are: " + "\n" + d.toString()));
 	JOptionPane.showMessageDialog(null, begCards);
 	/*begCards.add(new JLabel("Your opponent's cards are:" + "\n" + B.one.Starter.makeLL().toString()));
 	  JOptionPane.showMessageDialog(null, begCards);*/
@@ -364,7 +372,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//ACTUAL GAME COMMENCES
 
 	while(B.one.Starter.size()!=0 && A.one.Starter.size() !=0){
-	    card = createImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card");
+	    card.setIcon(new ImageIcon("CARDS/"+ A.one.DrawName() + ".png"));
 
 	    if(B.one.Starter.size() == 0 && A.one.Starter.size() > 0){
 		result2.add(new JLabel("Good job. YOU WON!!"));
@@ -412,12 +420,12 @@ public class GuiRedo extends JFrame implements ActionListener {
 	//buttons.add(heading);
 	*/
 
-	card = createImageIcon("CARDS/question.png", "PlayerA card");
+	card.setIcon(new ImageIcon("CARDS/question.png", "PlayerA card"));
 	enemyQM = createImageIcon("CARDS/question.png", "questionmark");
 	//playcard = new JLabel(card);
 	layout1 = new JPanel();
 	//layout1.add(new JLabel(card));
-	layout1.add(new JLabel(card));
+	layout1.add(card);
 	layout1.add(new JLabel(enemyQM));
 
 	panel = new JPanel(new BorderLayout());//(new GridLayout(6,1));

@@ -130,7 +130,7 @@ public class Deck3 extends ArrayList<Cards> {
     public String toString(){
 	String ret = new String();
 	for (int i = 0; i < C.size(); i++){
-	    ret += C.get(i).getName() + "\n";
+	    ret += C.get(i).getName() + ", " + "\n";
 	}
 	return ret;
     }
