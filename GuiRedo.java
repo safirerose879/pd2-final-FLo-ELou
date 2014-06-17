@@ -57,6 +57,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	}
 
 	if (e.getSource() == wisdom){
+	    enemyQM.setIcon(new ImageIcon("CARDS/"+ B.one.DrawName() + ".png", "PlayerB card"));
 	    message = new JPanel();
 	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getWisdom()) + " WISDOM points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getWisdom()) + " WISDOM points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
@@ -76,6 +77,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}
 		A.one.Starter.add(B.one.Starter.get(0));
 		B.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else if (A.one.Starter.get(0).getWisdom() < B.one.Starter.get(0).getWisdom()){
@@ -93,6 +95,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}		
 		B.one.Starter.add(A.one.Starter.get(0));
 		A.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else{
@@ -102,11 +105,12 @@ public class GuiRedo extends JFrame implements ActionListener {
 		B.one.Starter.remove(0);
 		A.one.Starter.remove(0);
 		JOptionPane.showMessageDialog(null, result);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    } 
 	}
  
 	if (e.getSource() == likability){
-
+	    enemyQM.setIcon(new ImageIcon("CARDS/"+ B.one.DrawName() + ".png", "PlayerB card"));
 	    message = new JPanel();
 	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getLikability()) + " LIKABILITY points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getLikability()) + " LIKABILITY points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
@@ -126,6 +130,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}
 		A.one.Starter.add(B.one.Starter.get(0));
 		B.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else if (A.one.Starter.get(0).getLikability() < B.one.Starter.get(0).getLikability()){
@@ -143,6 +148,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}		
 		B.one.Starter.add(A.one.Starter.get(0));
 		A.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else{
@@ -152,10 +158,12 @@ public class GuiRedo extends JFrame implements ActionListener {
 		B.one.Starter.remove(0);
 		A.one.Starter.remove(0);
 		JOptionPane.showMessageDialog(null, result);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    } 
 	}
  
 	if (e.getSource() == enthusiasm){
+	    enemyQM.setIcon(new ImageIcon("CARDS/"+ B.one.DrawName() + ".png", "PlayerB card"));
 	    message = new JPanel();
 	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getEnthusiasm()) + " ENTHUSIASM points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getEnthusiasm()) + " ENTHUSIASM points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
@@ -175,6 +183,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}
 		A.one.Starter.add(B.one.Starter.get(0));
 		B.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else if (A.one.Starter.get(0).getEnthusiasm() < B.one.Starter.get(0).getEnthusiasm()){
@@ -192,6 +201,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}		
 		B.one.Starter.add(A.one.Starter.get(0));
 		A.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else{
@@ -201,10 +211,12 @@ public class GuiRedo extends JFrame implements ActionListener {
 		B.one.Starter.remove(0);
 		A.one.Starter.remove(0);
 		JOptionPane.showMessageDialog(null, result);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    } 
 	}
 
 	if (e.getSource() == charisma){
+	    enemyQM.setIcon(new ImageIcon("CARDS/"+ B.one.DrawName() + ".png", "PlayerB card"));
 	    message = new JPanel();
 	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getCharisma()) + " CHARISMA points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getCharisma()) + " CHARISMA points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
@@ -224,6 +236,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}
 		A.one.Starter.add(B.one.Starter.get(0));
 		B.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else if (A.one.Starter.get(0).getCharisma() < B.one.Starter.get(0).getCharisma()){
@@ -241,6 +254,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}		
 		B.one.Starter.add(A.one.Starter.get(0));
 		A.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else{
@@ -250,10 +264,12 @@ public class GuiRedo extends JFrame implements ActionListener {
 		B.one.Starter.remove(0);
 		A.one.Starter.remove(0);
 		JOptionPane.showMessageDialog(null, result);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    } 
 	}
 
 	if (e.getSource() == bravery){
+	    enemyQM.setIcon(new ImageIcon("CARDS/"+ B.one.DrawName() + ".png", "PlayerB card"));
 	    message = new JPanel();
 	    message.add(new JLabel(A.one.Starter.get(0).getName() + " has " + String.valueOf(A.one.Starter.get(0).getBravery()) + " BRAVERY points. Your opponent played the " + B.one.Starter.get(0).getName() + " card which has " + String.valueOf(B.one.Starter.get(0).getBravery()) + " BRAVERY points.")) ;
 	    JOptionPane.showMessageDialog(null, message);
@@ -273,6 +289,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}
 		A.one.Starter.add(B.one.Starter.get(0));
 		B.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else if (A.one.Starter.get(0).getBravery() < B.one.Starter.get(0).getBravery()){
@@ -290,6 +307,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		}		
 		B.one.Starter.add(A.one.Starter.get(0));
 		A.one.Starter.remove(0);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    }
 
 	    else{
@@ -299,6 +317,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 		B.one.Starter.remove(0);
 		A.one.Starter.remove(0);
 		JOptionPane.showMessageDialog(null, result);
+		enemyQM.setIcon(new ImageIcon("CARDS/question.png", "PlayerB card"));
 	    } 
 	}
 
