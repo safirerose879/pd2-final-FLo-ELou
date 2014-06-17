@@ -57,3 +57,7 @@ no
 6-15-14 Flo Used Emma's working Linked List Deck3. YES IT WORKSSSS FOR MULTIPLE GAMES!!!!! Seems like Refill isnt working...but it's still beast.
 
 6-16-14 Flo A glitch in Refill and Tied but it works with the game. The rules have changed. Sorry if it's a bum move but I'm really tired of trying to fix it with no success. Now you get to keep the spoils of the game but you'll never be under 10 cards.
+
+6-15-14	Elou  GUI
+
+6-16-14	Elou  WHO KNEW PROGRESS IN GUI WAS POSSIBLE :')
