@@ -52,7 +52,7 @@ public class GuiRedo extends JFrame implements ActionListener {
         } 
 	if (e.getSource() == rules){
 	    message = new JPanel();
-	    message.add(new JLabel("Here are the rules:"));
+	    message.add(new JLabel("You forgot already? Well, here are the rules:\n You have 5 traits on each card. Choose one, and if it is greater than your opponent's, you win the round (tied pile and all).\n If your trait is lower than your opponent's, you lose the round (and the tied pile).\n If both of you have the same value for the trair, it's a tie, and the card is put in the tied pile.\n Good luck, and have fun!"));
 	    JOptionPane.showMessageDialog(null, message);
 	}
 
@@ -370,7 +370,7 @@ public class GuiRedo extends JFrame implements ActionListener {
 	
 	int reply = JOptionPane.showConfirmDialog(null, "Welcome to a Emma [F]Lo[u] and Co. production. Would you like to know about the rules?");
 	    if (reply == JOptionPane.YES_OPTION){
-		rulesIntro.add(new JLabel("The rules are:"));
+		rulesIntro.add(new JLabel("The rules are: \n You have 5 traits on each card. Choose one, and if it is greater than your opponent's, you win the round (tied pile and all).\n If your trait is lower than your opponent's, you lose the round (and the tied pile).\n If both of you have the same value for the trair, it's a tie, and the card is put in the tied pile."));
 		JOptionPane.showMessageDialog(null, rulesIntro);
 	    }
 	    else{
