@@ -14,6 +14,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     private JButton exitButton, wisdom, likability, enthusiasm, charisma, bravery, shuffle, nextGame, rules;
     private JLabel heading,test,playcard;
     private JLabel card = new JLabel(new ImageIcon("question.png"));
+    private JLabel enemyQM = new JLabel(new ImageIcon("question.png"));
     private JTextArea ta;
     private JPanel panel,layout1,panel2, message, begCards, rulesIntro, result, result1, result2;
 
@@ -25,7 +26,7 @@ public class GuiRedo extends JFrame implements ActionListener {
     //private Player A = new Player();
     //private Player B = new Player();
     //private ImageIcon card;
-    private ImageIcon enemyQM;
+    //private ImageIcon enemyQM;
 
     private int numShuffles;
 
@@ -304,17 +305,18 @@ public class GuiRedo extends JFrame implements ActionListener {
 	if(e.getSource() == shuffle){
 	    if (numShuffles == 2){
 		message = new JPanel();
-		d.shuffle();
-		d.makeLL();
+		A.one.shuffle();
 		numShuffles = numShuffles - 1;
+		card.setIcon(new ImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card"));
 		message.add(new JLabel("You have " + String.valueOf(numShuffles) + " shuffle left."));
 		JOptionPane.showMessageDialog(null, message);
 	    }
 	    else if (numShuffles > 0){
 		message = new JPanel();
-		d.shuffle();
-		d.makeLL();
+		A.one.shuffle();
+		//d.makeLL();
 		numShuffles = numShuffles - 1;
+		card.setIcon(new ImageIcon("CARDS/"+ A.one.DrawName() + ".png", "PlayerA card"));
 		message.add(new JLabel("You have " + String.valueOf(numShuffles) + " shuffles left."));
 		JOptionPane.showMessageDialog(null, message);
 	    }
@@ -421,12 +423,12 @@ public class GuiRedo extends JFrame implements ActionListener {
 	*/
 
 	card.setIcon(new ImageIcon("CARDS/question.png", "PlayerA card"));
-	enemyQM = createImageIcon("CARDS/question.png", "questionmark");
+	enemyQM.setIcon(new ImageIcon("CARDS/question.png", "questionmark"));
 	//playcard = new JLabel(card);
 	layout1 = new JPanel();
 	//layout1.add(new JLabel(card));
 	layout1.add(card);
-	layout1.add(new JLabel(enemyQM));
+	layout1.add(enemyQM);
 
 	panel = new JPanel(new BorderLayout());//(new GridLayout(6,1));
 	    //panel.setMaximumSize(new Dimension (100,100));
